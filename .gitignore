@@ -174,3 +174,6 @@ logs/
 *.npz
 *.pkl
 *.pickle
+
+# Personal/Private files
+author_bio_data.md
