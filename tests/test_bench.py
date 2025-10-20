@@ -1,7 +1,7 @@
 import numpy as np
 
-from benchmark_core.generation import fbm_davies_harte, generate_grid
-from benchmark_core.runner import BenchmarkConfig, run_benchmark_on_dataset
+from neurological_lrd_analysis.benchmark_core.generation import fbm_davies_harte, generate_grid
+from neurological_lrd_analysis.benchmark_core.runner import BenchmarkConfig, run_benchmark_on_dataset
 
 
 def test_fbm_generator_basic():

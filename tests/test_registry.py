@@ -1,4 +1,4 @@
-from benchmark_registry.registry import get_registry
+from neurological_lrd_analysis.benchmark_registry.registry import get_registry
 
 
 def test_registry_has_12():
