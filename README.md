@@ -95,6 +95,10 @@ print(f"Data quality score: {result.data_quality_score:.3f}")
 - **[API Reference](docs/API_REFERENCE.md)** - Complete API documentation
 - **[Configuration Guide](docs/CONFIGURATION_GUIDE.md)** - Application-specific configuration
 - **[Benchmarking Guide](docs/BENCHMARKING_GUIDE.md)** - Enhanced benchmarking system
+- **[Jupyter Notebooks](notebooks/)** - Interactive tutorials for demonstration and training
+  - [01_Biomedical_Time_Series_Analysis.ipynb](notebooks/01_Biomedical_Time_Series_Analysis.ipynb) - Biomedical data generation and analysis
+  - [02_Hurst_Estimator_Creation_and_Validation.ipynb](notebooks/02_Hurst_Estimator_Creation_and_Validation.ipynb) - Estimator development and validation
+  - [03_Benchmarking_and_Leaderboards.ipynb](notebooks/03_Benchmarking_and_Leaderboards.ipynb) - Systematic benchmarking and performance evaluation
 
 ## 🎯 Use Cases
 
@@ -156,6 +160,11 @@ neurological_lrd_analysis/
 │   ├── benchmark_backends/            # Backend selection and optimization
 │   └── benchmark_registry/            # Estimator registry system
 ├── docs/                         # Documentation
+├── notebooks/                    # Interactive Jupyter tutorials
+│   ├── 01_Biomedical_Time_Series_Analysis.ipynb
+│   ├── 02_Hurst_Estimator_Creation_and_Validation.ipynb
+│   ├── 03_Benchmarking_and_Leaderboards.ipynb
+│   └── README.md
 ├── scripts/                      # Demo scripts and utilities
 ├── tests/                        # Test suite
 ├── examples/                     # Example notebooks and code
