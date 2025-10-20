@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  neurological-lrd-analysis:
+    build: .
+    container_name: neurological-lrd-analysis
+    volumes:
+      - .:/app
+      - ./results:/app/results
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+    command: tail -f /dev/null  # Keep container running for development
+
+  jupyter:
+    build: .
+    container_name: neurological-lrd-analysis-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+      - ./results:/app/results
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --notebook-dir=/app
+
+  tests:
+    build: .
+    container_name: neurological-lrd-analysis-tests
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: pytest tests/ -v
+
+  docs:
+    build: .
+    container_name: neurological-lrd-analysis-docs
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: |
+      sh -c "
+        cd docs && 
+        make html && 
+        cd build/html && 
+        python -m http.server 8080
+      "
