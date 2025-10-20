@@ -18,5 +18,5 @@ numpyro>=0.13.0
 
 # Specialized libraries
 hpfracc>=0.1.0
-pywt>=1.4.0
+PyWavelets>=1.4.0
 fbm>=0.1.0
