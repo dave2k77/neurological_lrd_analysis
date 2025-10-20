@@ -14,8 +14,14 @@ A comprehensive library for estimating Hurst exponents in neurological time seri
 ### Installation
 
 ```bash
-# Install from PyPI
+# Install from PyPI (recommended)
 pip install neurological-lrd-analysis
+
+# Install with GPU support
+pip install neurological-lrd-analysis[gpu]
+
+# Install with development dependencies
+pip install neurological-lrd-analysis[dev]
 
 # Or install from source
 git clone https://github.com/dave2k77/neurological_lrd_analysis.git
@@ -191,9 +197,42 @@ If you use this library in your research, please cite:
 }
 ```
 
+## 📦 Releases and Versioning
+
+This project follows [Semantic Versioning](https://semver.org/) and uses GitHub Actions for automated releases to PyPI.
+
+### Creating a New Release
+
+1. **Bump version**: `python scripts/bump_version.py 0.4.1`
+2. **Commit changes**: `git add . && git commit -m "Bump version to 0.4.1"`
+3. **Create tag**: `git tag v0.4.1`
+4. **Push to GitHub**: `git push origin main --tags`
+5. **GitHub Actions** will automatically:
+   - Run tests
+   - Build the package
+   - Publish to PyPI
+   - Create a GitHub release
+
+### Development Releases
+
+For testing, you can publish to TestPyPI:
+
+```bash
+# Push to develop branch to trigger TestPyPI publishing
+git checkout develop
+git push origin develop
+```
+
+### Installation Options
+
+- **Stable releases**: `pip install neurological-lrd-analysis`
+- **Development versions**: `pip install git+https://github.com/dave2k77/neurological_lrd_analysis.git`
+- **Test versions**: `pip install --index-url https://test.pypi.org/simple/ neurological-lrd-analysis`
+
 ## 🔗 Links
 
 - [Documentation](https://neurological-lrd-analysis.readthedocs.io/)
 - [Issue Tracker](https://github.com/dave2k77/neurological_lrd_analysis/issues)
 - [PyPI Package](https://pypi.org/project/neurological-lrd-analysis/)
+- [GitHub Releases](https://github.com/dave2k77/neurological_lrd_analysis/releases)
 - [Research Paper](docs/comprehensive-lrd-estimators-paper.md)

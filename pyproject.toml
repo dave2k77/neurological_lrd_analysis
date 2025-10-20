@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "neurological-lrd-analysis"
 version = "0.4.0"
-description = "A comprehensive library for estimating Hurst exponents in neurological time series data with advanced benchmarking and realistic data generation"
+description = "Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection: A Framework for Memory-Driven EEG Analysis"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}

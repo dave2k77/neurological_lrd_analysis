@@ -303,6 +303,35 @@ When requesting features:
    - Any technical considerations
    - Potential challenges or limitations
 
+## 📦 Release Process
+
+### For Maintainers
+
+1. **Update version**:
+   ```bash
+   python scripts/bump_version.py 0.4.1
+   ```
+
+2. **Commit and tag**:
+   ```bash
+   git add .
+   git commit -m "Bump version to 0.4.1"
+   git tag v0.4.1
+   git push origin main --tags
+   ```
+
+3. **GitHub Actions** will automatically:
+   - Run all tests
+   - Build the package
+   - Publish to PyPI
+   - Create a GitHub release
+
+### For Contributors
+
+- **Development releases**: Push to `develop` branch for TestPyPI publishing
+- **Feature branches**: Create PRs to `main` branch
+- **Testing**: Use TestPyPI for testing your changes
+
 ## 📞 Getting Help
 
 - **GitHub Issues**: For bugs and feature requests
