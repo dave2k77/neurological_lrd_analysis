@@ -23,7 +23,7 @@ email = 'd.r.chin@pgr.reading.ac.uk'
 orcid = 'https://orcid.org/0009-0003-9434-3919'
 
 # The full version, including alpha/beta/rc tags
-release = '0.4.1'
+release = '0.4.2'
 
 # -- General configuration ---------------------------------------------------
 

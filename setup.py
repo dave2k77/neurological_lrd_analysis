@@ -27,7 +27,7 @@ def read_requirements():
 
 setup(
     name="neurological-lrd-analysis",
-    version="0.4.1",
+    version="0.4.2",
     description="A comprehensive library for estimating Hurst exponents in neurological time series data",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
@@ -63,7 +63,7 @@ setup(
             "myst-parser>=1.0.0",
         ],
         "gpu": [
-            "jax[cuda12_pip]>=0.4.1",
+            "jax[cuda12_pip]>=0.4.2",
             "cupy-cuda12x>=12.0.0",
         ],
     },
