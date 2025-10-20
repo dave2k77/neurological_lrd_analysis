@@ -7,7 +7,9 @@ time series data with statistical confidence, uncertainty quantification,
 and performance monitoring.
 
 Developed as part of PhD research in Biomedical Engineering at the University of Reading, UK.
-Author: Davian R. Chin (PhD Candidate in Biomedical Engineering)
+Author: Davian R. Chin (PhD Candidate in Biomedical Engineering, University of Reading, UK)
+Email: d.r.chin@pgr.reading.ac.uk
+ORCiD: https://orcid.org/0009-0003-9434-3919
 Research Focus: Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection: 
 A Framework for Memory-Driven EEG Analysis
 

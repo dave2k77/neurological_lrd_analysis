@@ -18,7 +18,9 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 project = 'Neurological LRD Analysis'
 copyright = '2025, Davian R. Chin (PhD Candidate in Biomedical Engineering, University of Reading, UK)'
-author = 'Davian R. Chin'
+author = 'Davian R. Chin (PhD Candidate in Biomedical Engineering, University of Reading, UK)'
+email = 'd.r.chin@pgr.reading.ac.uk'
+orcid = 'https://orcid.org/0009-0003-9434-3919'
 
 # The full version, including alpha/beta/rc tags
 release = '0.4.1'

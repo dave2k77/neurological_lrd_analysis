@@ -9,6 +9,10 @@ A comprehensive library for estimating Hurst exponents in neurological time seri
 
 **Developed as part of PhD research in Biomedical Engineering at the University of Reading, UK** by Davian R. Chin, focusing on **Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection: A Framework for Memory-Driven EEG Analysis**.
 
+**Author:** Davian R. Chin (PhD Candidate in Biomedical Engineering, University of Reading, UK)  
+**Email:** d.r.chin@pgr.reading.ac.uk  
+**ORCiD:** [https://orcid.org/0009-0003-9434-3919](https://orcid.org/0009-0003-9434-3919)
+
 ## 🚀 Quick Start
 
 ### Installation
@@ -192,6 +196,8 @@ If you use this library in your research, please cite:
   author={Davian R. Chin},
   year={2025},
   institution={University of Reading, UK},
+  email={d.r.chin@pgr.reading.ac.uk},
+  orcid={https://orcid.org/0009-0003-9434-3919},
   note={PhD Research in Biomedical Engineering: A Framework for Memory-Driven EEG Analysis},
   url={https://github.com/dave2k77/neurological_lrd_analysis}
 }

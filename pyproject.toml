@@ -10,10 +10,10 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [
-    {name = "Davian R. Chin", email = "d.r.chin@pgr.reading.ac.uk"},
+    {name = "Davian R. Chin", email = "d.r.chin@pgr.reading.ac.uk", orcid = "https://orcid.org/0009-0003-9434-3919"},
 ]
 maintainers = [
-    {name = "Davian R. Chin", email = "d.r.chin@pgr.reading.ac.uk"},
+    {name = "Davian R. Chin", email = "d.r.chin@pgr.reading.ac.uk", orcid = "https://orcid.org/0009-0003-9434-3919"},
 ]
 keywords = [
     "hurst", "long-range-dependence", "neurological", "time-series", "fractal", 

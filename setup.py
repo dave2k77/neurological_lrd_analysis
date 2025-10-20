@@ -32,7 +32,7 @@ setup(
     long_description=read_readme(),
     long_description_content_type="text/markdown",
     author="Davian R. Chin",
-    author_email="davian.chin@example.com",
+    author_email="d.r.chin@pgr.reading.ac.uk",
     url="https://github.com/dave2k77/neurological_lrd_analysis",
     project_urls={
         "Homepage": "https://github.com/dave2k77/neurological_lrd_analysis",
