@@ -12,7 +12,7 @@ Research Focus: Physics-Informed Fractional Operator Learning for Real-Time Neur
 A Framework for Memory-Driven EEG Analysis
 """
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 __author__ = "Davian R. Chin"
 __author_title__ = "PhD Candidate in Biomedical Engineering"
 __institution__ = "University of Reading, UK"
