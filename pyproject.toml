@@ -10,10 +10,10 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [
-    {name = "Davian R. Chin", email = "d.r.chin@pgr.reading.ac.uk", orcid = "https://orcid.org/0009-0003-9434-3919"},
+    {name = "Davian R. Chin", email = "d.r.chin@pgr.reading.ac.uk"},
 ]
 maintainers = [
-    {name = "Davian R. Chin", email = "d.r.chin@pgr.reading.ac.uk", orcid = "https://orcid.org/0009-0003-9434-3919"},
+    {name = "Davian R. Chin", email = "d.r.chin@pgr.reading.ac.uk"},
 ]
 keywords = [
     "hurst", "long-range-dependence", "neurological", "time-series", "fractal", 
@@ -84,6 +84,7 @@ Homepage = "https://github.com/dave2k77/neurological_lrd_analysis"
 Documentation = "https://neurological-lrd-analysis.readthedocs.io"
 Repository = "https://github.com/dave2k77/neurological_lrd_analysis.git"
 Issues = "https://github.com/dave2k77/neurological_lrd_analysis/issues"
+"Author ORCiD" = "https://orcid.org/0009-0003-9434-3919"
 Changelog = "https://github.com/dave2k77/neurological_lrd_analysis/blob/main/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
