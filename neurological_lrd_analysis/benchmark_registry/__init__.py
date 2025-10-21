@@ -8,12 +8,11 @@ Author: Davian R. Chin (PhD Candidate in Biomedical Engineering)
 Research Focus: Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection.
 """
 
-from .registry import get_registry, register_estimator, EstimatorResult, BaseEstimator
+from .registry import BaseEstimator, EstimatorResult, get_registry, register_estimator
 
 __all__ = [
     "get_registry",
-    "register_estimator", 
+    "register_estimator",
     "EstimatorResult",
     "BaseEstimator",
 ]
-

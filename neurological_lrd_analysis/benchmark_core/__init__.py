@@ -9,13 +9,12 @@ Author: Davian R. Chin (PhD Candidate in Biomedical Engineering)
 Research Focus: Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection.
 """
 
-from .generation import generate_grid, fbm_davies_harte
+from .generation import fbm_davies_harte, generate_grid
 from .runner import BenchmarkConfig, run_benchmark_on_dataset
 
 __all__ = [
     "generate_grid",
-    "fbm_davies_harte", 
+    "fbm_davies_harte",
     "BenchmarkConfig",
     "run_benchmark_on_dataset",
 ]
-

@@ -8,7 +8,7 @@ This library is developed as part of PhD research in Biomedical Engineering at t
 focusing on physics-informed fractional operator learning for real-time neurological biomarker detection.
 
 Author: Davian R. Chin (PhD Candidate in Biomedical Engineering, University of Reading, UK)
-Research Focus: Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection: 
+Research Focus: Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection:
 A Framework for Memory-Driven EEG Analysis
 """
 
@@ -21,53 +21,51 @@ __orcid__ = "https://orcid.org/0009-0003-9434-3919"
 __license__ = "MIT"
 __research_context__ = "PhD Research in Biomedical Engineering"
 
-# Core imports
-from .biomedical_hurst_factory import (
-    BiomedicalHurstEstimatorFactory,
-    EstimatorType,
-    ConfidenceMethod,
-    HurstResult,
-    BiomedicalDataProcessor
+# Backend imports
+from .benchmark_backends.selector import select_backend
+from .benchmark_core.biomedical_scenarios import (
+    BIOMEDICAL_SCENARIOS,
+    generate_ecg_scenario,
+    generate_eeg_scenario,
+    generate_respiratory_scenario,
 )
 
 # Benchmarking imports
 from .benchmark_core.generation import (
-    generate_grid,
-    fbm_davies_harte,
-    generate_fgn,
-    generate_arfima,
-    generate_mrw,
-    generate_fou,
+    TimeSeriesSample,
     add_contamination,
-    TimeSeriesSample
+    fbm_davies_harte,
+    generate_arfima,
+    generate_fgn,
+    generate_fou,
+    generate_grid,
+    generate_mrw,
 )
-
 from .benchmark_core.runner import (
     BenchmarkConfig,
     BenchmarkResult,
     ScoringWeights,
-    run_benchmark_on_dataset,
     analyze_benchmark_results,
-    create_leaderboard
-)
-
-from .benchmark_core.biomedical_scenarios import (
-    generate_eeg_scenario,
-    generate_ecg_scenario,
-    generate_respiratory_scenario,
-    BIOMEDICAL_SCENARIOS
+    create_leaderboard,
+    run_benchmark_on_dataset,
 )
 
 # Registry imports
 from .benchmark_registry.registry import (
+    BaseEstimator,
+    EstimatorResult,
     get_registry,
     register_estimator,
-    BaseEstimator,
-    EstimatorResult
 )
 
-# Backend imports
-from .benchmark_backends.selector import select_backend
+# Core imports
+from .biomedical_hurst_factory import (
+    BiomedicalDataProcessor,
+    BiomedicalHurstEstimatorFactory,
+    ConfidenceMethod,
+    EstimatorType,
+    HurstResult,
+)
 
 __all__ = [
     # Version info
@@ -75,14 +73,12 @@ __all__ = [
     "__author__",
     "__email__",
     "__license__",
-    
     # Core factory
     "BiomedicalHurstEstimatorFactory",
     "EstimatorType",
     "ConfidenceMethod",
     "HurstResult",
     "BiomedicalDataProcessor",
-    
     # Data generation
     "generate_grid",
     "fbm_davies_harte",
@@ -92,7 +88,6 @@ __all__ = [
     "generate_fou",
     "add_contamination",
     "TimeSeriesSample",
-    
     # Benchmarking
     "BenchmarkConfig",
     "BenchmarkResult",
@@ -100,19 +95,16 @@ __all__ = [
     "run_benchmark_on_dataset",
     "analyze_benchmark_results",
     "create_leaderboard",
-    
     # Biomedical scenarios
     "generate_eeg_scenario",
     "generate_ecg_scenario",
     "generate_respiratory_scenario",
     "BIOMEDICAL_SCENARIOS",
-    
     # Registry
     "get_registry",
     "register_estimator",
     "BaseEstimator",
     "EstimatorResult",
-    
     # Backend
     "select_backend",
 ]
