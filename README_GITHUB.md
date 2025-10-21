@@ -4,14 +4,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI](https://img.shields.io/badge/PyPI-neurological--lrd--analysis-green.svg)](https://pypi.org/project/neurological-lrd-analysis/)
 [![Documentation](https://img.shields.io/badge/docs-readthedocs-blue.svg)](https://neurological-lrd-analysis.readthedocs.io/)
+[![GitHub Actions](https://github.com/dave2k77/neurological_lrd_analysis/workflows/CI/badge.svg)](https://github.com/dave2k77/neurological_lrd_analysis/actions)
+[![Codecov](https://codecov.io/gh/dave2k77/neurological_lrd_analysis/branch/main/graph/badge.svg)](https://codecov.io/gh/dave2k77/neurological_lrd_analysis)
 
-A comprehensive library for estimating Hurst exponents in neurological time series data, featuring multiple estimation methods, realistic data generation, and advanced benchmarking capabilities.
+A comprehensive library for estimating Hurst exponents in neurological time series data, featuring **classical methods**, **machine learning baselines**, and **comprehensive benchmarking capabilities**.
 
 **Developed as part of PhD research in Biomedical Engineering at the University of Reading, UK** by Davian R. Chin, focusing on **Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection: A Framework for Memory-Driven EEG Analysis**.
-
-**Author:** Davian R. Chin (PhD Candidate in Biomedical Engineering, University of Reading, UK)  
-**Email:** d.r.chin@pgr.reading.ac.uk  
-**ORCiD:** [https://orcid.org/0009-0003-9434-3919](https://orcid.org/0009-0003-9434-3919)
 
 ## 🚀 Quick Start
 
@@ -52,33 +50,28 @@ result = factory.estimate(
 
 print(f"Hurst exponent: {result.hurst_estimate:.3f}")
 print(f"Confidence interval: {result.confidence_interval}")
-print(f"Data quality score: {result.data_quality_score:.3f}")
 ```
 
 #### Machine Learning Methods
 ```python
 from neurological_lrd_analysis import (
-    create_pretrained_suite, quick_predict, quick_ensemble_predict,
-    ClassicalMLBenchmark, run_comprehensive_benchmark
+    create_pretrained_suite, quick_predict, quick_ensemble_predict
 )
 
 # Create pretrained models (one-time setup)
 create_pretrained_suite("pretrained_models", force_retrain=True)
 
-# Fast ML prediction
+# Fast ML prediction (10-50ms)
 hurst_ml = quick_predict(your_time_series, "pretrained_models", "random_forest")
 
 # Ensemble prediction (best accuracy)
 hurst_ensemble, uncertainty = quick_ensemble_predict(your_time_series, "pretrained_models")
-
-# Comprehensive benchmark comparison
-results = run_comprehensive_benchmark()
-print(f"Best method: {results['best_method']}")
-print(f"Performance: {results['performance_metrics']}")
 ```
 
-#### Benchmark Results
+#### Comprehensive Benchmarking
 ```python
+from neurological_lrd_analysis import ClassicalMLBenchmark
+
 # Run comprehensive benchmark
 benchmark = ClassicalMLBenchmark("pretrained_models")
 results = benchmark.run_comprehensive_benchmark()
@@ -90,7 +83,7 @@ for method, metrics in results['summaries'].items():
           f"Time={metrics.mean_computation_time*1000:.1f}ms")
 ```
 
-## ✨ Features
+## ✨ Key Features
 
 ### 🧮 **Multiple Estimation Methods**
 - **Classical Methods**: DFA, R/S Analysis, Higuchi, Generalized Hurst Exponent, Periodogram, GPH, Whittle MLE, DWT, Abry-Veitch, MFDFA
@@ -104,68 +97,71 @@ for method, metrics in results['summaries'].items():
 - **Ensemble Methods**: Weighted combination of multiple ML models
 - **Real-time Inference**: 10-50ms prediction times
 
+### 🏆 **Comprehensive Benchmarking**
+- **Classical vs ML Comparison**: Direct performance comparison between methods
+- **Real Benchmark Results**: Actual performance data with CSV exports
+- **Visualization System**: Publication-ready plots and analysis
+- **Performance Metrics**: MAE, RMSE, correlation, computation time, success rate
+
 ### 🏥 **Biomedical Scenarios**
 - **EEG**: Rest, eyes closed/open, sleep, seizure patterns
 - **ECG**: Normal heart rate, tachycardia, realistic QRS complexes
 - **Respiratory**: Breathing patterns, irregular breathing
 - **Neurological**: Memory-driven EEG analysis, neurological biomarker detection
 - **Artifacts**: Electrode pops, motion, baseline drift, powerline interference
-- **Physics-Informed Features**: Fractional operator learning, real-time biomarker detection
 
-### 📊 **Statistical Analysis**
-- Bootstrap confidence intervals
-- Theoretical confidence intervals
-- Uncertainty quantification
-- Comprehensive error metrics (bias, MAE, RMSE)
-- Cross-validation and model validation
+## 📊 Benchmark Results
 
-### 🏆 **Comprehensive Benchmarking**
-- **Classical vs ML Comparison**: Direct performance comparison between methods
-- **Real Benchmark Results**: Actual performance data with CSV exports
-- **Visualization System**: Publication-ready plots and analysis
-- **Performance Metrics**: MAE, RMSE, correlation, computation time, success rate
-- **Method Rankings**: Clear performance and speed rankings
+### Performance Rankings (MAE - Mean Absolute Error)
+1. **🥇 Ensemble (ML)**: MAE 0.1518 - **BEST OVERALL**
+2. **🥈 DFA (Classical)**: MAE 0.1983 - Best Classical
+3. **🥉 R/S Analysis (Classical)**: MAE 0.1993
+4. **4th Periodogram (Classical)**: MAE 0.2038
+5. **5th Higuchi (Classical)**: MAE 0.9906
 
-### ⚡ **Performance Optimization**
-- JAX GPU acceleration
-- Numba CPU optimization
-- Intelligent backend selection
-- Lazy imports for efficiency
-- ML model caching and fast inference
+### Speed Rankings (computation time)
+1. **🥇 Periodogram**: 14.0ms - **FASTEST**
+2. **🥈 Ensemble (ML)**: 59.3ms - **ML is very fast!**
+3. **🥉 R/S Analysis**: 694.2ms
+4. **4th Higuchi**: 811.5ms
+5. **5th DFA**: 2044.5ms
 
-## 📖 Documentation
-
-- **[Complete Documentation](docs/)** - Comprehensive guides and API reference
-- **[Tutorial](docs/TUTORIAL.md)** - Step-by-step tutorial with examples
-- **[API Reference](docs/API_REFERENCE.md)** - Complete API documentation
-- **[Configuration Guide](docs/CONFIGURATION_GUIDE.md)** - Application-specific configuration
-- **[Benchmarking Guide](docs/BENCHMARKING_GUIDE.md)** - Enhanced benchmarking system
-- **[Jupyter Notebooks](notebooks/)** - Interactive tutorials for demonstration and training
-  - [01_Biomedical_Time_Series_Analysis.ipynb](notebooks/01_Biomedical_Time_Series_Analysis.ipynb) - Biomedical data generation and analysis
-  - [02_Hurst_Estimator_Creation_and_Validation.ipynb](notebooks/02_Hurst_Estimator_Creation_and_Validation.ipynb) - Estimator development and validation
-  - [03_Benchmarking_and_Leaderboards.ipynb](notebooks/03_Benchmarking_and_Leaderboards.ipynb) - Systematic benchmarking and performance evaluation
+### Key Findings
+- **ML Ensemble method achieved the best accuracy** (MAE: 0.1518)
+- **ML methods are significantly faster** than most classical methods
+- **ML ensemble is 4x faster than DFA** while being more accurate
+- **ML methods show excellent correlation** (0.9294) with true values
 
 ## 🎯 Use Cases
 
-### BCI/Real-time Applications
-```bash
-python scripts/run_benchmark.py --success-weight 0.4 --accuracy-weight 0.2 --speed-weight 0.3 --robustness-weight 0.1
+### Real-time Applications
+```python
+# Fast ML prediction for real-time systems
+hurst_ml = quick_predict(eeg_data, "pretrained_models", "random_forest")
+# 10-50ms prediction time
 ```
 
 ### Research Applications
-```bash
-python scripts/run_benchmark.py --success-weight 0.2 --accuracy-weight 0.4 --speed-weight 0.1 --robustness-weight 0.3
+```python
+# Comprehensive analysis with uncertainty quantification
+hurst_ensemble, uncertainty = quick_ensemble_predict(eeg_data, "pretrained_models")
+print(f"Hurst: {hurst_ensemble:.3f} ± {uncertainty:.3f}")
 ```
 
-### Biomedical Scenarios
-```bash
-python scripts/run_benchmark.py --biomedical-scenarios eeg_rest,ecg_normal --contaminations none,noise,electrode_pop
+### Benchmarking
+```python
+# Compare all methods
+benchmark = ClassicalMLBenchmark("pretrained_models")
+results = benchmark.run_comprehensive_benchmark()
+# Results saved to CSV with visualizations
 ```
 
-### Neurological Conditions
-```bash
-python scripts/run_benchmark.py --biomedical-scenarios eeg_parkinsonian,eeg_epileptic --contaminations heavy_tail,neural_avalanche
-```
+## 📖 Documentation
+
+- **[Complete Documentation](https://neurological-lrd-analysis.readthedocs.io/)** - Comprehensive guides and API reference
+- **[ML Baselines Tutorial](https://neurological-lrd-analysis.readthedocs.io/en/latest/ml_tutorial.html)** - Step-by-step ML tutorial
+- **[Feature Extraction Guide](https://neurological-lrd-analysis.readthedocs.io/en/latest/feature_extraction.html)** - 74+ feature extraction
+- **[Benchmarking Guide](https://neurological-lrd-analysis.readthedocs.io/en/latest/benchmarking.html)** - Performance comparison
 
 ## 🧪 Examples and Demos
 
@@ -179,9 +175,6 @@ python scripts/neurological_conditions_demo.py
 
 # Run NumPyro integration demonstration
 python scripts/numpyro_integration_demo.py
-
-# Run application scoring demonstration
-python scripts/application_scoring_demo.py
 ```
 
 ### Machine Learning Methods
@@ -212,21 +205,25 @@ ls results/comprehensive_benchmark/
 # Run all tests
 python -m pytest tests/ -v
 
-# Run specific test categories
-python -m pytest tests/test_accuracy.py -v
-python -m pytest tests/test_backends.py -v
-python -m pytest tests/test_registry.py -v
+# Run ML baselines tests
+python -m pytest tests/test_ml_baselines.py -v
+
+# Run pretrained models tests
+python -m pytest tests/test_pretrained_models.py -v
+
+# Run benchmark comparison tests
+python -m pytest tests/test_benchmark_comparison.py -v
 ```
 
 ## 📊 Project Structure
 
 ```
 neurological_lrd_analysis/
-├── neurological_lrd_analysis/     # Main package directory
-│   ├── biomedical_hurst_factory.py    # Main library file
-│   ├── benchmark_core/                # Core benchmarking functionality
-│   ├── benchmark_backends/            # Backend selection and optimization
-│   ├── benchmark_registry/            # Estimator registry system
+├── neurological_lrd_analysis/     # Main package
+│   ├── biomedical_hurst_factory.py    # Classical methods
+│   ├── benchmark_core/                # Core benchmarking
+│   ├── benchmark_backends/            # Backend selection
+│   ├── benchmark_registry/            # Estimator registry
 │   └── ml_baselines/                  # Machine learning baselines
 │       ├── feature_extraction.py       # 74+ feature extraction
 │       ├── ml_estimators.py          # ML model implementations
@@ -269,16 +266,42 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/dave2k77/neurological_lrd_analysis.git
+cd neurological_lrd_analysis
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install development dependencies
+pip install -e .[dev]
+
+# Run tests
+python -m pytest tests/ -v
+
+# Run linting
+black neurological_lrd_analysis/
+isort neurological_lrd_analysis/
+flake8 neurological_lrd_analysis/
+
+# Run type checking
+mypy neurological_lrd_analysis/
+```
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- Built with [JAX](https://github.com/google/jax) for GPU acceleration and physics-informed learning
-- Uses [NumPyro](https://github.com/pyro-ppl/numpyro) for Bayesian inference in fractional operators
-- Leverages [PyWavelets](https://github.com/PyWavelets/pywavelets) for wavelet-based fractional analysis
-- Inspired by research in physics-informed machine learning and memory-driven neurological signal processing
+- Built with [JAX](https://github.com/google/jax) for GPU acceleration
+- Uses [NumPyro](https://github.com/pyro-ppl/numpyro) for Bayesian inference
+- Leverages [PyWavelets](https://github.com/PyWavelets/pywavelets) for wavelet analysis
+- Inspired by research in physics-informed machine learning
 
 ## 📚 Citation
 
@@ -297,6 +320,14 @@ If you use this library in your research, please cite:
 }
 ```
 
+## 🔗 Links
+
+- [Documentation](https://neurological-lrd-analysis.readthedocs.io/)
+- [Issue Tracker](https://github.com/dave2k77/neurological_lrd_analysis/issues)
+- [PyPI Package](https://pypi.org/project/neurological-lrd-analysis/)
+- [GitHub Releases](https://github.com/dave2k77/neurological_lrd_analysis/releases)
+- [Research Paper](docs/comprehensive-lrd-estimators-paper.md)
+
 ## 📦 Releases and Versioning
 
 This project follows [Semantic Versioning](https://semver.org/) and uses GitHub Actions for automated releases to PyPI.
@@ -313,26 +344,14 @@ This project follows [Semantic Versioning](https://semver.org/) and uses GitHub 
    - Publish to PyPI
    - Create a GitHub release
 
-### Development Releases
-
-For testing, you can publish to TestPyPI:
-
-```bash
-# Push to develop branch to trigger TestPyPI publishing
-git checkout develop
-git push origin develop
-```
-
 ### Installation Options
 
 - **Stable releases**: `pip install neurological-lrd-analysis`
 - **Development versions**: `pip install git+https://github.com/dave2k77/neurological_lrd_analysis.git`
 - **Test versions**: `pip install --index-url https://test.pypi.org/simple/ neurological-lrd-analysis`
 
-## 🔗 Links
+---
 
-- [Documentation](https://neurological-lrd-analysis.readthedocs.io/)
-- [Issue Tracker](https://github.com/dave2k77/neurological_lrd_analysis/issues)
-- [PyPI Package](https://pypi.org/project/neurological-lrd-analysis/)
-- [GitHub Releases](https://github.com/dave2k77/neurological_lrd_analysis/releases)
-- [Research Paper](docs/comprehensive-lrd-estimators-paper.md)
+**Author:** Davian R. Chin (PhD Candidate in Biomedical Engineering, University of Reading, UK)  
+**Email:** d.r.chin@pgr.reading.ac.uk  
+**ORCiD:** [https://orcid.org/0009-0003-9434-3919](https://orcid.org/0009-0003-9434-3919)

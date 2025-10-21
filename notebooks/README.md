@@ -24,7 +24,11 @@ This directory contains comprehensive Jupyter notebooks designed for demonstrati
 - Neurological condition simulation (Parkinson's, Epilepsy, etc.)
 - Contamination methods (artifacts, noise, missing data)
 - Data quality assessment
-- Long-range dependence analysis
+- Long-range dependence analysis (Classical Methods)
+- Machine Learning Baselines (Random Forest, SVR, Gradient Boosting)
+- Hyperparameter Optimization (Optuna Integration)
+- Pretrained Models (Training, Storage, Loading)
+- Comprehensive Benchmarking (Classical vs ML Methods)
 - Biomedical scenario comparisons
 - Clinical interpretation of results
 
@@ -36,6 +40,7 @@ This directory contains comprehensive Jupyter notebooks designed for demonstrati
 - Comprehensive visualizations
 - Clinical interpretations
 - Best practices for data analysis
+- ML integration for improved accuracy
 
 ---
 
@@ -148,6 +153,74 @@ The notebooks support research in:
 - **Physics-Informed Machine Learning**
 - **Fractional Calculus Applications**
 - **Real-Time Monitoring Systems**
+
+### 4. [04_ML_Baselines_Tutorial.ipynb](04_ML_Baselines_Tutorial.ipynb)
+
+**Purpose:** Comprehensive tutorial for Machine Learning baselines in Hurst exponent estimation
+
+**Topics Covered:**
+- Feature extraction (74+ features from time series)
+- ML baselines (Random Forest, SVR, Gradient Boosting)
+- Hyperparameter optimization (Optuna integration)
+- Pretrained models (Training, storage, loading)
+- Inference systems (Single, batch, ensemble predictions)
+- Comprehensive benchmarking (Classical vs ML methods)
+- Performance analysis (Accuracy, speed, memory)
+
+**Target Audience:** Researchers and practitioners who want to leverage machine learning for improved Hurst estimation
+
+**Key Features:**
+- Complete ML workflow demonstration
+- Feature engineering best practices
+- Model optimization techniques
+- Production-ready inference systems
+- Performance benchmarking
+
+---
+
+### 5. [05_Hyperparameter_Optimization_Tutorial.ipynb](05_Hyperparameter_Optimization_Tutorial.ipynb)
+
+**Purpose:** Advanced tutorial for hyperparameter optimization with Optuna
+
+**Topics Covered:**
+- Optuna integration (Study creation and optimization)
+- Hyperparameter spaces (Defining search spaces for different models)
+- Optimization strategies (Different optimization algorithms)
+- Multi-objective optimization (Balancing accuracy vs speed)
+- Visualization (Optimization progress and results)
+- Best practices (Tips for effective hyperparameter tuning)
+
+**Target Audience:** Researchers who want to maximize ML model performance
+
+**Key Features:**
+- Advanced optimization techniques
+- Multi-objective optimization
+- Visualization of optimization progress
+- Best practices for hyperparameter tuning
+
+---
+
+### 6. [06_Pretrained_Models_Tutorial.ipynb](06_Pretrained_Models_Tutorial.ipynb)
+
+**Purpose:** Tutorial for pretrained model system and inference deployment
+
+**Topics Covered:**
+- Model training (Creating and training model suites)
+- Model storage (Efficient model persistence and metadata)
+- Model loading (Loading pretrained models for inference)
+- Inference systems (Single, batch, and ensemble predictions)
+- Model management (Organizing and tracking model versions)
+- Production deployment (Best practices for production systems)
+
+**Target Audience:** Practitioners who need efficient model deployment and inference
+
+**Key Features:**
+- Production-ready model deployment
+- Efficient inference systems
+- Model versioning and management
+- Best practices for production systems
+
+---
 
 ## Customization
 

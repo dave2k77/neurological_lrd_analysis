@@ -349,6 +349,8 @@ def add_eeg_artifacts(
     if np.random.random() < contamination_level:
         n_eye_movements = int(contamination_level * 10)  # Few eye movements
         for _ in range(n_eye_movements):
+            if n <= 100:
+                continue  # Skip artifacts for very short signals
             start_idx = np.random.randint(0, n - 100)
             duration = np.random.randint(50, 200)
             end_idx = min(n, start_idx + duration)
@@ -501,7 +503,8 @@ def generate_biomedical_scenario(
     n: int,
     hurst: float,
     contamination_level: float = 0.1,
-    auto_contamination: str = None,
+    auto_contamination: Optional[str] = None,
+    seed: Optional[int] = None,
     **kwargs,
 ) -> np.ndarray:
     """
@@ -529,7 +532,7 @@ def generate_biomedical_scenario(
     """
     if scenario_type == "eeg":
         eeg_scenario = kwargs.get("eeg_scenario", "rest")
-        data = generate_eeg_scenario(n, hurst, eeg_scenario, contamination_level)
+        data = generate_eeg_scenario(n, hurst, eeg_scenario, contamination_level, seed)
 
         # Apply automatic contamination if specified
         if auto_contamination:
@@ -541,7 +544,7 @@ def generate_biomedical_scenario(
 
     elif scenario_type == "ecg":
         heart_rate = kwargs.get("heart_rate", 70.0)
-        data = generate_ecg_scenario(n, hurst, heart_rate, contamination_level)
+        data = generate_ecg_scenario(n, hurst, heart_rate, contamination_level, seed)
 
         # Apply automatic contamination if specified
         if auto_contamination:
@@ -554,7 +557,7 @@ def generate_biomedical_scenario(
     elif scenario_type == "respiratory":
         breathing_rate = kwargs.get("breathing_rate", 15.0)
         data = generate_respiratory_scenario(
-            n, hurst, breathing_rate, contamination_level
+            n, hurst, breathing_rate, contamination_level, seed
         )
 
         # Apply automatic contamination if specified

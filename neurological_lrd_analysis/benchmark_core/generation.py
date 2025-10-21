@@ -588,8 +588,8 @@ def generate_grid(
     lengths: List[int],
     contaminations: List[str],
     contamination_level: float = 0.1,
-    generators: List[str] = None,
-    biomedical_scenarios: List[str] = None,
+    generators: Optional[List[str]] = None,
+    biomedical_scenarios: Optional[List[str]] = None,
     seed: Optional[int] = None,
 ) -> List[TimeSeriesSample]:
     """

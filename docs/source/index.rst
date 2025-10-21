@@ -13,16 +13,18 @@ Welcome to Neurological LRD Analysis's documentation!
    :target: https://pypi.org/project/neurological-lrd-analysis/
    :alt: PyPI
 
-A comprehensive library for estimating Hurst exponents in neurological time series data, featuring multiple estimation methods, realistic data generation, and advanced benchmarking capabilities.
+A comprehensive library for estimating Hurst exponents in neurological time series data, featuring **classical methods**, **machine learning baselines**, and **comprehensive benchmarking capabilities**.
 
 **Research Context**: This library is developed as part of PhD research in Biomedical Engineering at the University of Reading, UK by Davian R. Chin, focusing on **Physics-Informed Fractional Operator Learning for Real-Time Neurological Biomarker Detection: A Framework for Memory-Driven EEG Analysis**.
 
 Features
 --------
 
-* **Multiple Estimation Methods**: Temporal, spectral, wavelet, and multifractal estimators
+* **Classical Methods**: DFA, R/S Analysis, Higuchi, Generalized Hurst Exponent, Periodogram, GPH, Whittle MLE, DWT, Abry-Veitch, MFDFA
+* **Machine Learning Baselines**: Random Forest, SVR, Gradient Boosting, Ensemble methods with 74+ feature extraction
+* **Comprehensive Benchmarking**: Direct comparison between classical and ML methods with real performance data
+* **Fast Inference**: 10-50ms prediction times with pretrained models
 * **Neurological Scenarios**: EEG, ECG, respiratory signals with realistic artifacts
-* **Advanced Benchmarking**: Parametrized scoring and comprehensive statistical analysis
 * **GPU Acceleration**: JAX and NumPyro integration for Bayesian inference
 * **Clinical Relevance**: Specialized for Parkinson's disease, epilepsy, and neurological conditions
 
@@ -36,6 +38,8 @@ Install the package:
    pip install neurological-lrd-analysis
 
 Basic usage:
+
+**Classical Methods:**
 
 .. code-block:: python
 
@@ -54,6 +58,23 @@ Basic usage:
 
    print(f"Hurst exponent: {result.hurst_estimate:.3f}")
 
+**Machine Learning Methods:**
+
+.. code-block:: python
+
+   from neurological_lrd_analysis import (
+       create_pretrained_suite, quick_predict, quick_ensemble_predict
+   )
+
+   # Create pretrained models (one-time setup)
+   create_pretrained_suite("pretrained_models", force_retrain=True)
+
+   # Fast ML prediction (10-50ms)
+   hurst_ml = quick_predict(your_time_series, "pretrained_models", "random_forest")
+
+   # Ensemble prediction (best accuracy)
+   hurst_ensemble, uncertainty = quick_ensemble_predict(your_time_series, "pretrained_models")
+
 Contents
 --------
 
@@ -64,6 +85,7 @@ Contents
    installation
    quickstart
    tutorial
+   ml_tutorial
 
 .. toctree::
    :maxdepth: 2
@@ -74,6 +96,17 @@ Contents
    configuration
    biomedical_scenarios
    neurological_conditions
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Machine Learning
+
+   ml_baselines
+   ml_tutorial
+   feature_extraction
+   hyperparameter_optimization
+   pretrained_models
+   benchmark_comparison
 
 .. toctree::
    :maxdepth: 2

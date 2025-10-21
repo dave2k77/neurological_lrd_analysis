@@ -8,7 +8,7 @@ This module provides targeted visualizations for the core goals of the library:
 """
 
 from pathlib import Path
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -143,7 +143,7 @@ def create_bias_distribution_plot(
         The created figure
     """
     # Extract bias data by estimator
-    bias_data = {}
+    bias_data: Dict[str, List[float]] = {}
 
     for result in results:
         estimator = result.estimator
@@ -200,14 +200,14 @@ def create_error_vs_hurst_plot(
         The created figure
     """
     # Extract data
-    estimators = set(result.estimator_name for result in results)
+    estimators = set(result.estimator for result in results)
 
     fig, ax = plt.subplots(figsize=(12, 8))
 
-    colors = plt.cm.tab10(np.linspace(0, 1, len(estimators)))
+    colors = plt.cm.get_cmap('tab10')(np.linspace(0, 1, len(estimators)))
 
     for i, estimator in enumerate(estimators):
-        estimator_results = [r for r in results if r.estimator_name == estimator]
+        estimator_results = [r for r in results if r.estimator == estimator]
 
         hurst_values = []
         errors = []
@@ -377,7 +377,7 @@ def create_uncertainty_quantification_plot(
         The created figure
     """
     # Extract confidence interval data
-    ci_data = {}
+    ci_data: Dict[str, List[float]] = {}
 
     for result in results:
         estimator = result.estimator

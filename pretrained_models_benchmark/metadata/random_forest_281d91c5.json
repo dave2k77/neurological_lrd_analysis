@@ -1,0 +1,66 @@
+{
+  "model_id": "random_forest_281d91c5",
+  "model_type": "random_forest",
+  "version": "1.0.0",
+  "created_at": "2025-10-21T03:42:53.641094",
+  "training_data_info": {
+    "n_samples": 12,
+    "n_features": 74,
+    "hurst_range": [
+      0.3,
+      0.7
+    ],
+    "hurst_values": [
+      0.3,
+      0.5,
+      0.7
+    ],
+    "lengths": [
+      1000
+    ],
+    "generators": [
+      "fbm",
+      "fgn"
+    ],
+    "contaminations": [
+      "none",
+      "noise"
+    ],
+    "biomedical_scenarios": [
+      "eeg"
+    ],
+    "n_samples_per_config": 20,
+    "random_state": 42,
+    "feature_extractor_config": {
+      "include_spectral": true,
+      "include_wavelet": true,
+      "include_fractal": true,
+      "include_biomedical": true,
+      "sampling_rate": 250.0
+    }
+  },
+  "performance_metrics": {
+    "training_score": 0.9267727272727266,
+    "validation_score": 0.5276499999999994,
+    "cv_mean": 0.011510666666666681,
+    "cv_std": 0.009379224417118229
+  },
+  "hyperparameters": {
+    "n_estimators": 50,
+    "random_state": 42
+  },
+  "feature_extractor_config": {
+    "include_spectral": true,
+    "include_wavelet": true,
+    "include_fractal": true,
+    "include_biomedical": true,
+    "sampling_rate": 250.0
+  },
+  "status": "trained",
+  "file_path": "pretrained_models_benchmark/models/random_forest_281d91c5.joblib",
+  "checksum": "df16402e5d95188aef16cc39150f5eeb",
+  "description": "RF model for benchmark",
+  "tags": null,
+  "author": "Davian R. Chin",
+  "license": "MIT"
+}

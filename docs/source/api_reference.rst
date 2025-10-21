@@ -47,6 +47,73 @@ ConfidenceMethod
    :members:
    :undoc-members:
 
+Machine Learning Baselines
+----------------------------
+
+TimeSeriesFeatureExtractor
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: neurological_lrd_analysis.ml_baselines.feature_extraction.TimeSeriesFeatureExtractor
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+RandomForestEstimator
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: neurological_lrd_analysis.ml_baselines.ml_estimators.RandomForestEstimator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+SVREstimator
+~~~~~~~~~~~~
+
+.. autoclass:: neurological_lrd_analysis.ml_baselines.ml_estimators.SVREstimator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+GradientBoostingEstimator
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: neurological_lrd_analysis.ml_baselines.ml_estimators.GradientBoostingEstimator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+OptunaOptimizer
+~~~~~~~~~~~~~~~
+
+.. autoclass:: neurological_lrd_analysis.ml_baselines.hyperparameter_optimization.OptunaOptimizer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PretrainedModelManager
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: neurological_lrd_analysis.ml_baselines.pretrained_models.PretrainedModelManager
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+PretrainedInference
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: neurological_lrd_analysis.ml_baselines.inference.PretrainedInference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ClassicalMLBenchmark
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: neurological_lrd_analysis.ml_baselines.benchmark_comparison.ClassicalMLBenchmark
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Data Generation
 ---------------
 
@@ -216,7 +283,43 @@ Bayesian Hurst Estimator
    :undoc-members:
    :show-inheritance:
 
-Utility Functions
+Utility Machine Learning Functions
+---------------------------
+
+Feature Extraction Functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: neurological_lrd_analysis.ml_baselines.feature_extraction.extract_statistical_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.feature_extraction.extract_spectral_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.feature_extraction.extract_wavelet_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.feature_extraction.extract_fractal_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.feature_extraction.extract_biomedical_features
+
+Hyperparameter Optimization Functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: neurological_lrd_analysis.ml_baselines.hyperparameter_optimization.create_optuna_study
+.. autofunction:: neurological_lrd_analysis.ml_baselines.hyperparameter_optimization.optimize_hyperparameters
+.. autofunction:: neurological_lrd_analysis.ml_baselines.hyperparameter_optimization.optimize_all_estimators
+
+Pretrained Model Functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: neurological_lrd_analysis.ml_baselines.pretrained_models.create_default_training_configs
+.. autofunction:: neurological_lrd_analysis.ml_baselines.pretrained_models.create_pretrained_suite
+
+Inference Functions
+~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: neurological_lrd_analysis.ml_baselines.inference.quick_predict
+.. autofunction:: neurological_lrd_analysis.ml_baselines.inference.quick_ensemble_predict
+
+Benchmark Functions
+~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: neurological_lrd_analysis.ml_baselines.benchmark_comparison.run_comprehensive_benchmark
+
+Functions
 -----------------
 
 Helper Functions

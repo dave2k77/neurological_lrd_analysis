@@ -20,3 +20,7 @@ numpyro>=0.13.0
 hpfracc>=0.1.0
 PyWavelets>=1.4.0
 fbm>=0.1.0
+
+# ML and optimization
+optuna>=3.0.0
+joblib>=1.3.0

@@ -1,0 +1,66 @@
+{
+  "model_id": "svr_11b406ae",
+  "model_type": "svr",
+  "version": "1.0.0",
+  "created_at": "2025-10-21T03:42:53.645687",
+  "training_data_info": {
+    "n_samples": 12,
+    "n_features": 74,
+    "hurst_range": [
+      0.3,
+      0.7
+    ],
+    "hurst_values": [
+      0.3,
+      0.5,
+      0.7
+    ],
+    "lengths": [
+      1000
+    ],
+    "generators": [
+      "fbm",
+      "fgn"
+    ],
+    "contaminations": [
+      "none",
+      "noise"
+    ],
+    "biomedical_scenarios": [
+      "eeg"
+    ],
+    "n_samples_per_config": 20,
+    "random_state": 42,
+    "feature_extractor_config": {
+      "include_spectral": true,
+      "include_wavelet": true,
+      "include_fractal": true,
+      "include_biomedical": true,
+      "sampling_rate": 250.0
+    }
+  },
+  "performance_metrics": {
+    "training_score": 0.7070668712469148,
+    "validation_score": 0.3566044015633183,
+    "cv_mean": 0.018444212922781828,
+    "cv_std": 0.013445148787342624
+  },
+  "hyperparameters": {
+    "C": 1.0,
+    "gamma": "scale"
+  },
+  "feature_extractor_config": {
+    "include_spectral": true,
+    "include_wavelet": true,
+    "include_fractal": true,
+    "include_biomedical": true,
+    "sampling_rate": 250.0
+  },
+  "status": "trained",
+  "file_path": "pretrained_models_benchmark/models/svr_11b406ae.joblib",
+  "checksum": "5255fb29917f447bd97071b16cf1a7ee",
+  "description": "SVR model for benchmark",
+  "tags": null,
+  "author": "Davian R. Chin",
+  "license": "MIT"
+}

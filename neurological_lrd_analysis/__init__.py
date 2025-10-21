@@ -67,6 +67,25 @@ from .biomedical_hurst_factory import (
     HurstResult,
 )
 
+# ML Baseline imports
+from .ml_baselines import (
+    MLBaselineType,
+    RandomForestEstimator,
+    SVREstimator,
+    GradientBoostingEstimator,
+    MLBaselineFactory,
+    TimeSeriesFeatureExtractor,
+    OptunaOptimizer,
+    create_optuna_study,
+    optimize_hyperparameters,
+    PretrainedModelManager,
+    PretrainedInference,
+    quick_predict,
+    quick_ensemble_predict,
+    ClassicalMLBenchmark,
+    run_comprehensive_benchmark
+)
+
 __all__ = [
     # Version info
     "__version__",
@@ -107,4 +126,21 @@ __all__ = [
     "EstimatorResult",
     # Backend
     "select_backend",
+    
+    # ML Baselines
+    "MLBaselineType",
+    "RandomForestEstimator",
+    "SVREstimator",
+    "GradientBoostingEstimator",
+    "MLBaselineFactory",
+    "TimeSeriesFeatureExtractor",
+    "OptunaOptimizer",
+    "create_optuna_study",
+    "optimize_hyperparameters",
+    "PretrainedModelManager",
+    "PretrainedInference",
+    "quick_predict",
+    "quick_ensemble_predict",
+    "ClassicalMLBenchmark",
+    "run_comprehensive_benchmark"
 ]
