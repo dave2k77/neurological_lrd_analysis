@@ -162,8 +162,8 @@ def run_biomedical_benchmark():
     print("BIOMEDICAL SCENARIO BENCHMARK")
     print("="*80)
     
-    from benchmark_core.generation import generate_grid
-    from benchmark_core.runner import BenchmarkConfig, run_benchmark_on_dataset, create_leaderboard
+    from neurological_lrd_analysis.benchmark_core.generation import generate_grid
+    from neurological_lrd_analysis.benchmark_core.runner import BenchmarkConfig, run_benchmark_on_dataset, create_leaderboard
     
     # Generate biomedical datasets
     datasets = generate_grid(

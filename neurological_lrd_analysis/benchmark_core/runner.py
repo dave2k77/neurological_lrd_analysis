@@ -75,6 +75,10 @@ class BenchmarkResult:
     convergence_flag: bool = True
     additional_metrics: Dict[str, Any] = field(default_factory=dict)
     error_message: Optional[str] = None
+    
+    # Sample metadata
+    contamination: Optional[str] = None
+    length: Optional[int] = None
 
     # Statistical metrics
     bias: Optional[float] = None
@@ -83,6 +87,11 @@ class BenchmarkResult:
     confidence_interval: Optional[tuple] = None
     p_value: Optional[float] = None
     standard_error: Optional[float] = None
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert result to dictionary."""
+        from dataclasses import asdict
+        return asdict(self)
 
 
 def run_benchmark_on_dataset(
@@ -199,6 +208,8 @@ def run_benchmark_on_dataset(
                     confidence_interval=confidence_interval,
                     p_value=p_value,
                     standard_error=standard_error,
+                    contamination=sample.contamination,
+                    length=sample.length,
                 )
 
                 results.append(result)
@@ -211,7 +222,10 @@ def run_benchmark_on_dataset(
                     true_hurst=sample.true_hurst,
                     computation_time=0.0,
                     convergence_flag=False,
+
                     error_message=str(e),
+                    contamination=sample.contamination,
+                    length=sample.length,
                 )
                 results.append(result)
 
@@ -253,7 +267,10 @@ def save_benchmark_results(
             "true_hurst": result.true_hurst,
             "computation_time": result.computation_time,
             "convergence_flag": result.convergence_flag,
+
             "error_message": result.error_message,
+            "contamination": result.contamination,
+            "length": result.length,
             # Statistical metrics
             "bias": result.bias,
             "absolute_error": result.absolute_error,

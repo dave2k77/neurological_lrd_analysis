@@ -30,6 +30,11 @@ class EstimatorResult:
     additional_metrics: Dict[str, Any]
     error_message: Optional[str] = None
 
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert result to dictionary."""
+        from dataclasses import asdict
+        return asdict(self)
+
 
 class BaseEstimator(ABC):
     """Base class for all Hurst exponent estimators."""

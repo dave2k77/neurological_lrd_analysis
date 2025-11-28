@@ -15,6 +15,16 @@ import numpy as np
 logger = logging.getLogger(__name__)
 
 
+def _lazy_import_lrdbenchmark_generation():
+    """Lazy import of lrdbenchmark generation module"""
+    try:
+        import lrdbenchmark
+        from lrdbenchmark import generation
+        return generation
+    except ImportError:
+        return None
+
+
 @dataclass
 class TimeSeriesSample:
     """Container for a generated time series sample."""
@@ -49,6 +59,17 @@ def fbm_davies_harte(n: int, hurst: float, seed: Optional[int] = None) -> np.nda
     """
     if not (0 < hurst < 1):
         raise ValueError(f"Hurst exponent must be in (0, 1), got {hurst}")
+
+    # Try lrdbenchmark first
+    lrd_gen = _lazy_import_lrdbenchmark_generation()
+    if lrd_gen is not None:
+        try:
+            if seed is not None:
+                np.random.seed(seed)
+            # Assuming standard API
+            return lrd_gen.generate_fbm(n=n, H=hurst, method='davies_harte')
+        except Exception as e:
+            logger.debug(f"lrdbenchmark fbm failed: {e}")
 
     try:
         from fbm import FBM
@@ -116,6 +137,16 @@ def generate_fgn(n: int, hurst: float, seed: Optional[int] = None) -> np.ndarray
     np.ndarray
         Fractional Gaussian noise time series
     """
+    # Try lrdbenchmark first
+    lrd_gen = _lazy_import_lrdbenchmark_generation()
+    if lrd_gen is not None:
+        try:
+            if seed is not None:
+                np.random.seed(seed)
+            return lrd_gen.generate_fgn(n=n, H=hurst)
+        except Exception as e:
+            logger.debug(f"lrdbenchmark fgn failed: {e}")
+
     fbm = fbm_davies_harte(n + 1, hurst, seed)
     return np.diff(fbm)
 
@@ -153,6 +184,20 @@ def generate_arfima(
 
     if not (0 < hurst < 1):
         raise ValueError(f"Hurst exponent must be in (0, 1), got {hurst}")
+
+    # Try lrdbenchmark first
+    lrd_gen = _lazy_import_lrdbenchmark_generation()
+    if lrd_gen is not None:
+        try:
+            if seed is not None:
+                np.random.seed(seed)
+            d = hurst - 0.5
+            # Use default coeffs if None, matching local implementation logic
+            ar = ar_coeffs if ar_coeffs is not None else [0.3, -0.1]
+            ma = ma_coeffs if ma_coeffs is not None else [0.2]
+            return lrd_gen.generate_arfima(n=n, d=d, ar=ar, ma=ma)
+        except Exception as e:
+            logger.debug(f"lrdbenchmark arfima failed: {e}")
 
     # Default AR and MA coefficients
     if ar_coeffs is None:

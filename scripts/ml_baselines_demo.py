@@ -15,6 +15,7 @@ import seaborn as sns
 from pathlib import Path
 import time
 import warnings
+from typing import Optional
 
 # Import the main library
 from neurological_lrd_analysis import (
@@ -67,12 +68,17 @@ def generate_training_data(n_samples_per_hurst: int = 50,
     print(f"  - Data length: {data_length}")
     
     # Generate synthetic data
-    samples = generate_grid(
-        hurst_values=hurst_values,
-        lengths=[data_length],
-        contaminations=['none'],
-        generators=['fbm']
-    )
+    # Generate synthetic data
+    samples = []
+    for i in range(n_samples_per_hurst):
+        batch_samples = generate_grid(
+            hurst_values=hurst_values,
+            lengths=[data_length],
+            contaminations=['none'],
+            generators=['fbm'],
+            seed=i * 1000  # Ensure different seeds for each batch
+        )
+        samples.extend(batch_samples)
     
     # Extract features
     extractor = TimeSeriesFeatureExtractor()

@@ -75,6 +75,16 @@ def _lazy_import_numpyro():
         )
 
 
+def _lazy_import_lrdbenchmark():
+    """Lazy import of lrdbenchmark for accelerated estimation"""
+    try:
+        import lrdbenchmark
+        from lrdbenchmark import estimators
+        return lrdbenchmark, estimators
+    except ImportError:
+        return None, None
+
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -537,6 +547,37 @@ class DFAEstimator(BaseHurstEstimator):
         data = np.asarray(data)
         n = len(data)
 
+        # Try lrdbenchmark first
+        _, lrd_estimators = _lazy_import_lrdbenchmark()
+        if lrd_estimators is not None:
+            try:
+                # Map parameters to lrdbenchmark API
+                # Assuming standard API based on user description
+                estimator = lrd_estimators.DFA(
+                    min_scale=min_window if min_window else 10,
+                    max_scale=max_window if max_window else n // 4,
+                    order=polynomial_order,
+                    overlap=overlap
+                )
+                result = estimator.fit(data)
+                
+                # Convert result to expected format
+                additional_metrics = {
+                    "regression_r_squared": result.r2_score,
+                    "scaling_range": (int(result.scales[0]), int(result.scales[-1])),
+                    "num_windows_used": len(result.scales),
+                    "polynomial_order": polynomial_order,
+                    "convergence_flag": result.r2_score > 0.8,
+                    "backend": "lrdbenchmark"
+                }
+                
+                self.last_computation_time = time.time() - start_time
+                return result.hurst, additional_metrics
+                
+            except Exception as e:
+                logger.debug(f"lrdbenchmark DFA failed, falling back to local: {e}")
+                # Fallthrough to local implementation
+
         # Allow alternate parameter names used in some code/tests
         # (min_scale/max_scale/n_scales)
         if min_window is None and "min_scale" in kwargs:
@@ -734,6 +775,28 @@ class HiguchiEstimator(BaseHurstEstimator):
         data = np.asarray(data)
         n = len(data)
 
+        # Try lrdbenchmark first
+        _, lrd_estimators = _lazy_import_lrdbenchmark()
+        if lrd_estimators is not None:
+            try:
+                # Map parameters
+                estimator = lrd_estimators.Higuchi(
+                    k_max=kmax if kmax else 10
+                )
+                result = estimator.fit(data)
+                
+                additional_metrics = {
+                    "regression_r_squared": result.r2_score,
+                    "k_max": kmax if kmax else 10,
+                    "convergence_flag": result.r2_score > 0.8,
+                    "backend": "lrdbenchmark"
+                }
+                
+                self.last_computation_time = time.time() - start_time
+                return result.hurst, additional_metrics
+            except Exception as e:
+                logger.debug(f"lrdbenchmark Higuchi failed: {e}")
+
         if kmax is None:
             kmax = min(20, n // 10)
 
@@ -912,6 +975,29 @@ class RSAnalysisEstimator(BaseHurstEstimator):
         self.validate_data(data)
         data = np.asarray(data)
         n = len(data)
+
+        # Try lrdbenchmark first
+        _, lrd_estimators = _lazy_import_lrdbenchmark()
+        if lrd_estimators is not None:
+            try:
+                # Map parameters
+                estimator = lrd_estimators.RSAnalysis(
+                    min_scale=min_window if min_window else 10,
+                    max_scale=max_window if max_window else n // 4
+                )
+                result = estimator.fit(data)
+                
+                additional_metrics = {
+                    "regression_r_squared": result.r2_score,
+                    "scaling_range": (int(result.scales[0]), int(result.scales[-1])),
+                    "convergence_flag": result.r2_score > 0.8,
+                    "backend": "lrdbenchmark"
+                }
+                
+                self.last_computation_time = time.time() - start_time
+                return result.hurst, additional_metrics
+            except Exception as e:
+                logger.debug(f"lrdbenchmark R/S failed: {e}")
 
         if min_window is None:
             min_window = max(10, n // 100)
@@ -1227,6 +1313,35 @@ class DWTEstimator(BaseHurstEstimator):
         start_time = time.time()
         self.validate_data(data, min_length=100)
         data = np.asarray(data)
+
+        # Try lrdbenchmark first
+        _, lrd_estimators = _lazy_import_lrdbenchmark()
+        if lrd_estimators is not None:
+            try:
+                # Map parameters to lrdbenchmark API
+                estimator = lrd_estimators.WaveletEstimator(
+                    wavelet=wavelet,
+                    method="dwt",
+                    max_level=max_level
+                )
+                result = estimator.fit(data)
+                
+                additional_metrics = {
+                    "wavelet_variance_slope": result.slope,
+                    "regression_r_squared": result.r2_score,
+                    "scales_used": result.scales,
+                    "wavelet": wavelet,
+                    "max_level": max_level,
+                    "convergence_flag": result.r2_score > 0.7,
+                    "backend": "lrdbenchmark"
+                }
+                
+                self.last_computation_time = time.time() - start_time
+                return result.hurst, additional_metrics
+                
+            except Exception as e:
+                logger.debug(f"lrdbenchmark DWT failed, falling back to local: {e}")
+                # Fallthrough to local implementation
 
         if np.any(np.isnan(data)):
             valid_mask = ~np.isnan(data)

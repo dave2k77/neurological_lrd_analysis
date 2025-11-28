@@ -83,7 +83,8 @@ from .ml_baselines import (
     quick_predict,
     quick_ensemble_predict,
     ClassicalMLBenchmark,
-    run_comprehensive_benchmark
+    run_comprehensive_benchmark,
+    optimize_all_estimators
 )
 
 __all__ = [
@@ -142,5 +143,6 @@ __all__ = [
     "quick_predict",
     "quick_ensemble_predict",
     "ClassicalMLBenchmark",
-    "run_comprehensive_benchmark"
+    "run_comprehensive_benchmark",
+    "optimize_all_estimators"
 ]
