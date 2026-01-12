@@ -46,8 +46,13 @@ python scripts/run_benchmark.py --hurst-values 0.5,0.7 --lengths 512,1024
 ## 🧪 Testing and Validation
 
 ### Test Documentation
-- **[estimator_testing_validation/README_Tests.md](estimator_testing_validation/README_Tests.md)** - Test suite overview
-- **[estimator_testing_validation/Summary_Comprehensive_Test_Plan.md](estimator_testing_validation/Summary_Comprehensive_Test_Plan.md)** - Test plan summary
+- **[README_Tests.md](README_Tests.md)** - Test suite overview
+- **[Summary_Comprehensive_Test_Plan.md](Summary_Comprehensive_Test_Plan.md)** - Test plan summary
+
+### Reports and Analysis
+- **[reports/TEST_COVERAGE_SUMMARY.md](reports/TEST_COVERAGE_SUMMARY.md)** - Recent test coverage results
+- **[reports/ML_BENCHMARK_RESULTS.md](reports/ML_BENCHMARK_RESULTS.md)** - Machine Learning baseline results
+- **[reports/DOCUMENTATION_SUMMARY.md](reports/DOCUMENTATION_SUMMARY.md)** - Documentation status report
 
 ### Running Tests
 ```bash
@@ -63,31 +68,31 @@ python -m pytest estimator_testing_validation/ -m performance
 ## 🔬 Research and Implementation
 
 ### Research Documentation
-- **[estimator_research/comprehensive-lrd-estimators-paper.md](estimator_research/comprehensive-lrd-estimators-paper.md)** - Comprehensive LRD estimators research
-- **[estimator_research/Techniques_for_Estimating_the_Hurst_Exponent.md](estimator_research/Techniques_for_Estimating_the_Hurst_Exponent.md)** - Hurst estimation techniques
-- **[estimator_research/wavelet-based-lrd-estimators.md](estimator_research/wavelet-based-lrd-estimators.md)** - Wavelet-based LRD estimators
+- **[comprehensive-lrd-estimators-paper.md](comprehensive-lrd-estimators-paper.md)** - Comprehensive LRD estimators research
+- **[Techniques for Estimating the Hurst Exponent.md](Techniques%20for%20Estimating%20the%20Hurst%20Exponent.md)** - Hurst estimation techniques
+- **[wavelet-based-lrd-estimators.md](wavelet-based-lrd-estimators.md)** - Wavelet-based LRD estimators
 
 ### Implementation Documentation
-- **[estimator_implementation/API_Reference_Guide.md](estimator_implementation/API_Reference_Guide.md)** - Implementation API guide
-- **[estimator_implementation/comprehensive-hurst-library.md](estimator_implementation/comprehensive-hurst-library.md)** - Comprehensive Hurst library documentation
-- **[estimator_implementation/GPU-Acceleration-Strategy.md](estimator_implementation/GPU-Acceleration-Strategy.md)** - GPU acceleration strategy
+- **[API_Reference_Guide.md](API_Reference_Guide.md)** - Implementation API guide
+- **[comprehensive-hurst-library.md](comprehensive-hurst-library.md)** - Comprehensive Hurst library documentation
+- **[GPU-Acceleration-Strategy.md](GPU-Acceleration-Strategy.md)** - GPU acceleration strategy
 
 ## 📊 Data Models and Analysis
 
 ### Data Models
-- **[data_models_implementation/biomedical_data_models_generative_factory_architecture.md](data_models_implementation/biomedical_data_models_generative_factory_architecture.md)** - Data models architecture
-- **[data_models_implementation/biomedical_time_series_data_analysis_plotting_utility.md](data_models_implementation/biomedical_time_series_data_analysis_plotting_utility.md)** - Plotting utilities
-- **[data_models_implementation/biomedical-framework-api-documentation.md](data_models_implementation/biomedical-framework-api-documentation.md)** - Framework API documentation
-- **[data_models_implementation/biomedical-framework-index.md](data_models_implementation/biomedical-framework-index.md)** - Framework index
-- **[data_models_implementation/biomedical-framework-quick-reference.md](data_models_implementation/biomedical-framework-quick-reference.md)** - Quick reference guide
-- **[data_models_implementation/biomedical-generative-model-documentation.md](data_models_implementation/biomedical-generative-model-documentation.md)** - Generative model documentation
-- **[data_models_implementation/biomedical-plotting-system-documentation.md](data_models_implementation/biomedical-plotting-system-documentation.md)** - Plotting system documentation
-- **[data_models_implementation/Complete_API_Documentation_Biomedical_Time_Series_Analysis.md](data_models_implementation/Complete_API_Documentation_Biomedical_Time_Series_Analysis.md)** - Complete API documentation
-- **[data_models_implementation/design_algorithms_for_generating_synthetic_data.md](data_models_implementation/design_algorithms_for_generating_synthetic_data.md)** - Synthetic data generation algorithms
+- **[biomedical_data_models_generative_factory_architecture.md](biomedical_data_models_generative_factory_architecture.md)** - Data models architecture
+- **[biomedical_time_series_data_analysis_plotting_utility.md](biomedical_time_series_data_analysis_plotting_utility.md)** - Plotting utilities
+- **[biomedical-framework-api-documentation.md](biomedical-framework-api-documentation.md)** - Framework API documentation
+- **[biomedical-framework-index.md](biomedical-framework-index.md)** - Framework index
+- **[biomedical-framework-quick-reference.md](biomedical-framework-quick-reference.md)** - Quick reference guide
+- **[biomedical-generative-model-documentation.md](biomedical-generative-model-documentation.md)** - Generative model documentation
+- **[biomedical-plotting-system-documentation.md](biomedical-plotting-system-documentation.md)** - Plotting system documentation
+- **[Complete_API_Documentation_Biomedical_Time_Series_Analysis.md](Complete_API_Documentation_Biomedical_Time_Series_Analysis.md)** - Complete API documentation
+- **[design_algorithms_for_generating_synthetic_data.md](design_algorithms_for_generating_synthetic_data.md)** - Synthetic data generation algorithms
 
 ### Research
-- **[data_models_research/time-series-algorithms-comprehensive.md](data_models_research/time-series-algorithms-comprehensive.md)** - Time series algorithms research
-- **[data_models_research/time-series-models-biomedicine-neuroscience.md](data_models_research/time-series-models-biomedicine-neuroscience.md)** - Biomedical time series models
+- **[time-series-algorithms-comprehensive.md](time-series-algorithms-comprehensive.md)** - Time series algorithms research
+- **[time-series-models-biomedicine-neuroscience.md](time-series-models-biomedicine-neuroscience.md)** - Biomedical time series models
 
 ## 🎯 Usage Examples
 

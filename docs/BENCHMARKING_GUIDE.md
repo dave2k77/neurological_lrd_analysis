@@ -108,6 +108,52 @@ for hurst in hurst_values:
         print(f"  Std bias: {np.std(biases):.4f}")
         print(f"  Min bias: {np.min(biases):.4f}")
         print(f"  Max bias: {np.max(biases):.4f}")
+
+## Application-Specific Scoring
+
+The benchmarking system uses a weighted scoring function to rank estimators based on their suitability for specific use cases.
+
+### Scoring Weights Configuration
+
+```python
+from benchmark_core.runner import ScoringWeights
+
+# Default weights (balanced)
+default_weights = ScoringWeights(
+    success_rate=0.25,
+    accuracy=0.25,
+    speed=0.25,
+    robustness=0.25
+)
+
+# Real-time BCI weights (prioritize speed and success)
+bci_weights = ScoringWeights(
+    success_rate=0.4,
+    accuracy=0.2,
+    speed=0.3,
+    robustness=0.1
+)
+
+# Precision research weights (prioritize accuracy and robustness)
+research_weights = ScoringWeights(
+    success_rate=0.2,
+    accuracy=0.4,
+    speed=0.1,
+    robustness=0.3
+)
+```
+
+### Custom Weight Usage
+
+```python
+config = BenchmarkConfig(
+    output_dir='./results',
+    scoring_weights=bci_weights
+)
+
+results = run_benchmark_on_dataset(datasets, config)
+leaderboard = create_leaderboard(results) # Leaderboard uses the weights
+```
 ```
 
 ## Benchmark Configuration Options
@@ -301,6 +347,38 @@ if metrics['significance_rate'] < 0.5:
     print("- Increasing bootstrap samples")
     print("- Checking data stationarity")
     print("- Verifying scaling range selection")
+
+## Machine Learning Benchmarks
+
+The `ClassicalMLBenchmark` class provides a specialized interface for comparing classical Hurst estimators against pre-trained machine learning models.
+
+### Comparison Workflow
+
+```python
+from neurological_lrd_analysis.ml_baselines import ClassicalMLBenchmark
+
+# 1. Initialize benchmark with pre-trained models
+benchmark = ClassicalMLBenchmark(
+    model_dir="pretrained_models",
+    output_dir="ml_benchmark_results"
+)
+
+# 2. Run comprehensive comparison across multiple scenarios
+results = benchmark.run_comprehensive_benchmark(
+    n_samples=50,      # Samples per scenario
+    hurst_range=(0.3, 0.9)
+)
+
+# 3. Access summary statistics
+print(f"Classical vs ML Leaderboard:")
+print(results['leaderboard'])
+```
+
+### Key ML Benchmark Metrics
+In addition to standard metrics, the ML benchmark analyzes:
+- **Generalization Error**: Performance on synthetic vs. real biomedical scenarios.
+- **Inference Speed**: Comparison of feature extraction + ML prediction vs. classical integration.
+- **Uncertainty Calibration**: How well ML confidence intervals (from ensembles) correlate with actual error.
 ```
 
 ## Example Results Interpretation

@@ -76,6 +76,7 @@ Available estimation methods.
 - `DFA`: Detrended Fluctuation Analysis
 - `RS_ANALYSIS`: Rescaled Range (R/S) Analysis
 - `HIGUCHI`: Higuchi Fractal Dimension
+- `DETRENDED_MA`: Detrended Moving Average (DMA)
 - `GENERALIZED_HURST`: Generalized Hurst Exponent
 
 **Spectral Methods:**
@@ -85,12 +86,18 @@ Available estimation methods.
 
 **Wavelet Methods:**
 - `DWT`: Discrete Wavelet Transform Logscale
+- `CWT`: Continuous Wavelet Transform Logscale
 - `NDWT`: Non-decimated Wavelet Transform Logscale
+- `WAVELET_LEADERS`: Wavelet Leaders multifractal estimator
 - `ABRY_VEITCH`: Abry-Veitch wavelet estimator
 
 **Multifractal Methods:**
 - `MFDFA`: Multifractal Detrended Fluctuation Analysis
 - `MF_DMA`: Multifractal Detrended Moving Average
+
+**Machine Learning Methods:**
+- `RANDOM_FOREST`: Random Forest regressor
+- `SVR`: Support Vector Regression
 
 **Group Methods:**
 - `TEMPORAL`: All temporal methods
@@ -105,6 +112,7 @@ Confidence interval estimation methods.
 - `BOOTSTRAP`: Bootstrap resampling
 - `THEORETICAL`: Theoretical confidence intervals
 - `CROSS_VALIDATION`: Cross-validation based
+- `BAYESIAN`: Bayesian inference (requires NumPyro)
 - `NONE`: No confidence intervals
 
 ## Result Classes
@@ -514,6 +522,61 @@ The benchmarking system generates:
 - `benchmark_summary.txt`: Human-readable summary
 
 For detailed benchmarking documentation, see [BENCHMARKING_GUIDE.md](BENCHMARKING_GUIDE.md).
+
+## Machine Learning Baselines
+
+The `ml_baselines` module provides classical machine learning methods for Hurst exponent estimation, featuring automated feature extraction and hyperparameter optimization.
+
+### MLBaselineFactory
+
+Factory class for creating and managing ML-based estimators.
+
+#### Methods
+
+##### `create_estimator(method_type, **kwargs)`
+Create an ML estimator instance.
+
+**Parameters:**
+- `method_type` (MLBaselineType): e.g., `RANDOM_FOREST`, `SVR`, `GRADIENT_BOOSTING`
+- `**kwargs`: Hyperparameters for the estimator
+
+### Feature Extraction
+
+#### TimeSeriesFeatureExtractor
+Extracts 74+ comprehensive features from time series data.
+
+**Feature Categories:**
+- **Statistical**: Moments, entropy, distribution properties
+- **Spectral**: Power spectral density, frequency ratios
+- **Wavelet**: Energy distribution across scales
+- **Fractal**: Classical estimates as features
+- **Biomedical**: Physiological indices (EEG/ECG specific)
+
+### Pretrained Inference
+
+#### `quick_predict(data, model_dir, method="random_forest")`
+Fast prediction using a pretrained model.
+
+#### `quick_ensemble_predict(data, model_dir)`
+Ensemble prediction using multiple pretrained models for maximum accuracy and uncertainty quantification.
+
+### hyperparameter Optimization
+
+#### `optimize_hyperparameters(method_type, data, labels, n_trials=100)`
+Uses Optuna to find optimal hyperparameters for a specific ML method.
+
+### ML Benchmarking
+
+#### ClassicalMLBenchmark
+Specifically designed to compare classical estimation methods against ML baselines.
+
+```python
+from ml_baselines.benchmark_comparison import ClassicalMLBenchmark
+
+# Run comprehensive comparison
+benchmark = ClassicalMLBenchmark(model_dir="pretrained_models")
+results = benchmark.run_comprehensive_benchmark(n_samples=100)
+```
 
 ## Command Line Interface
 

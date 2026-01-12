@@ -11,6 +11,7 @@
 7. [Performance Optimization](#performance-optimization)
 8. [Troubleshooting](#troubleshooting)
 9. [Best Practices](#best-practices)
+10. [Machine Learning Estimators](#machine-learning-estimators)
 
 ## Installation and Setup
 
@@ -660,6 +661,76 @@ result_data = {
 # Save to file
 with open('hurst_analysis_results.json', 'w') as f:
     json.dump(result_data, f, indent=2)
+```
+
+```
+
+## Machine Learning Estimators
+
+The library includes advanced machine learning estimators that often outperform classical methods on short or contaminated biomedical signals.
+
+### 🎯 Fast ML Prediction
+
+Using pre-trained models for instantaneous Hurst estimation:
+
+```python
+from neurological_lrd_analysis.ml_baselines import quick_predict
+
+# Estimate using a pre-trained Random Forest model
+# Note: 'pretrained_models' is the directory where model weights are stored
+hurst_rf = quick_predict(
+    data=your_data, 
+    model_dir="pretrained_models", 
+    method="random_forest"
+)
+
+print(f"ML Estimate (RF): {hurst_rf:.3f}")
+```
+
+### 🤝 Ensemble Prediction (Recommended)
+
+For the highest accuracy and automated uncertainty quantification, use the ensemble inference:
+
+```python
+from neurological_lrd_analysis.ml_baselines import quick_ensemble_predict
+
+# Get ensemble estimate and uncertainty
+hurst_ensemble, uncertainty = quick_ensemble_predict(
+    data=your_data,
+    model_dir="pretrained_models"
+)
+
+print(f"Ensemble Estimate: {hurst_ensemble:.3f}")
+print(f"Model Uncertainty: {uncertainty:.3f}")
+```
+
+### 🧠 Training & Optimization
+
+If you have custom data, you can optimize hyperparameters and train your own models:
+
+```python
+from neurological_lrd_analysis.ml_baselines import optimize_hyperparameters, MLBaselineType
+
+# Optimize Random Forest for your specific data
+best_params = optimize_hyperparameters(
+    method_type=MLBaselineType.RANDOM_FOREST,
+    data=X_train,
+    labels=y_train,
+    n_trials=50
+)
+```
+
+### 📊 Comparing Classical and ML
+
+You can use the specialized benchmark class to see which approach works best for your data:
+
+```python
+from neurological_lrd_analysis.ml_baselines import ClassicalMLBenchmark
+
+benchmark = ClassicalMLBenchmark(model_dir="pretrained_models")
+comparison = benchmark.run_comprehensive_benchmark(n_samples=20)
+
+print(comparison['leaderboard'])
 ```
 
 This tutorial provides a comprehensive guide to using the Biomedical Hurst Factory. For more advanced topics and specific use cases, refer to the API Reference and the project documentation.
