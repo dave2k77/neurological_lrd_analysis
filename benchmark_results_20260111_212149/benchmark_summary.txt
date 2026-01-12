@@ -1,0 +1,197 @@
+Benchmark Summary
+================
+
+Total runs: 1080
+Successful runs: 881
+Failed runs: 199
+
+Abry-Veitch:
+  Total runs: 90
+  Successful: 60
+  Success rate: 66.67%
+  Mean estimate: 0.3758
+  Std estimate: 0.3683
+  Mean computation time: 0.0010s
+  Mean bias: -0.2758
+  Std bias: 0.3437
+  Mean absolute error: 0.3084
+  RMSE: 0.4407
+  Significant estimates (p<0.05): 60/60 (100.0%)
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+DFA:
+  Total runs: 90
+  Successful: 82
+  Success rate: 91.11%
+  Mean estimate: 1.2378
+  Std estimate: 0.4962
+  Mean computation time: 0.0644s
+  Mean bias: 0.5842
+  Std bias: 0.4830
+  Mean absolute error: 0.6335
+  RMSE: 0.7580
+  Significant estimates (p<0.05): 82/82 (100.0%)
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+DWT-Logscale:
+  Total runs: 90
+  Successful: 60
+  Success rate: 66.67%
+  Mean estimate: 0.3722
+  Std estimate: 0.3666
+  Mean computation time: 0.0024s
+  Mean bias: -0.2795
+  Std bias: 0.3420
+  Mean absolute error: 0.3098
+  RMSE: 0.4416
+  Significant estimates (p<0.05): 60/60 (100.0%)
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+GHE:
+  Total runs: 90
+  Successful: 90
+  Success rate: 100.00%
+  Mean estimate: 0.3941
+  Std estimate: 0.2600
+  Mean computation time: 0.0092s
+  Mean bias: -0.2637
+  Std bias: 0.2553
+  Mean absolute error: 0.2792
+  RMSE: 0.3670
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+GPH:
+  Total runs: 90
+  Successful: 74
+  Success rate: 82.22%
+  Mean estimate: 1.4246
+  Std estimate: 0.2082
+  Mean computation time: 0.0012s
+  Mean bias: 0.7462
+  Std bias: 0.2437
+  Mean absolute error: 0.7462
+  RMSE: 0.7850
+  Significant estimates (p<0.05): 74/74 (100.0%)
+  Mean confidence interval: [1.3781, 0.9819]
+  Mean CI width: -0.3962
+  Std CI width: 0.1938
+
+Higuchi:
+  Total runs: 90
+  Successful: 83
+  Success rate: 92.22%
+  Mean estimate: 1.4672
+  Std estimate: 0.3097
+  Mean computation time: 0.0263s
+  Mean bias: 0.8142
+  Std bias: 0.2927
+  Mean absolute error: 0.8142
+  RMSE: 0.8652
+  Significant estimates (p<0.05): 83/83 (100.0%)
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+Local-Whittle:
+  Total runs: 90
+  Successful: 90
+  Success rate: 100.00%
+  Mean estimate: 0.5533
+  Std estimate: 0.2949
+  Mean computation time: 0.0012s
+  Mean bias: -0.1045
+  Std bias: 0.3143
+  Mean absolute error: 0.2760
+  RMSE: 0.3312
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+MF-DMA(q=2):
+  Total runs: 90
+  Successful: 50
+  Success rate: 55.56%
+  Mean estimate: 0.2081
+  Std estimate: 0.1924
+  Mean computation time: 0.0146s
+  Mean bias: -0.4179
+  Std bias: 0.1849
+  Mean absolute error: 0.4179
+  RMSE: 0.4569
+  Significant estimates (p<0.05): 50/50 (100.0%)
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+MFDFA(q=2):
+  Total runs: 90
+  Successful: 84
+  Success rate: 93.33%
+  Mean estimate: 1.1573
+  Std estimate: 0.5105
+  Mean computation time: 0.0552s
+  Mean bias: 0.5026
+  Std bias: 0.5061
+  Mean absolute error: 0.5697
+  RMSE: 0.7132
+  Significant estimates (p<0.05): 84/84 (100.0%)
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+NDWT-Logscale:
+  Total runs: 90
+  Successful: 65
+  Success rate: 72.22%
+  Mean estimate: 0.3565
+  Std estimate: 0.3061
+  Mean computation time: 0.0015s
+  Mean bias: -0.2974
+  Std bias: 0.2888
+  Mean absolute error: 0.3090
+  RMSE: 0.4146
+  Significant estimates (p<0.05): 65/65 (100.0%)
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
+Periodogram:
+  Total runs: 90
+  Successful: 53
+  Success rate: 58.89%
+  Mean estimate: 1.8233
+  Std estimate: 0.6522
+  Mean computation time: 0.0014s
+  Mean bias: 1.1818
+  Std bias: 0.6053
+  Mean absolute error: 1.1818
+  RMSE: 1.3278
+  Significant estimates (p<0.05): 51/53 (96.2%)
+  Mean confidence interval: [0.8665, 0.9900]
+  Mean CI width: 0.1235
+  Std CI width: 0.5585
+
+R/S:
+  Total runs: 90
+  Successful: 90
+  Success rate: 100.00%
+  Mean estimate: 0.7959
+  Std estimate: 0.2422
+  Mean computation time: 0.0180s
+  Mean bias: 0.1382
+  Std bias: 0.2705
+  Mean absolute error: 0.2540
+  RMSE: 0.3038
+  Significant estimates (p<0.05): 90/90 (100.0%)
+  Mean confidence interval: [nan, nan]
+  Mean CI width: nan
+  Std CI width: nan
+
