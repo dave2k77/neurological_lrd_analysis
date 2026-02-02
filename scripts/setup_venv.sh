@@ -1,10 +1,10 @@
 #!/bin/bash
-# Setup script for the biomedical_hurst_factory project
-# Creates and configures the 'biomedical_hurst_env' virtual environment
+# Setup script for the neurological_lrd_analysis project
+# Creates and configures the 'neurological_env' virtual environment
 
 set -e  # Exit on any error
 
-echo "Setting up biomedical_hurst_factory development environment..."
+echo "Setting up neurological_lrd_analysis development environment..."
 echo "=============================================================="
 
 # Check if Python 3.11+ is available
@@ -20,18 +20,18 @@ fi
 echo "✓ Python version check passed: $python_version"
 
 # Create virtual environment
-echo "Creating virtual environment 'biomedical_hurst_env'..."
-if [ -d "biomedical_hurst_env" ]; then
-    echo "Virtual environment 'biomedical_hurst_env' already exists. Removing it..."
-    rm -rf biomedical_hurst_env
+echo "Creating virtual environment 'neurological_env'..."
+if [ -d "neurological_env" ]; then
+    echo "Virtual environment 'neurological_env' already exists. Removing it..."
+    rm -rf neurological_env
 fi
 
-python3 -m venv biomedical_hurst_env
+python3 -m venv neurological_env
 echo "✓ Virtual environment created"
 
 # Activate virtual environment
 echo "Activating virtual environment..."
-source biomedical_hurst_env/bin/activate
+source neurological_env/bin/activate
 
 # Upgrade pip
 echo "Upgrading pip..."
@@ -43,26 +43,26 @@ pip install -e .
 
 # Install development dependencies
 echo "Installing development dependencies..."
-pip install pytest pytest-cov pytest-html pytest-json-report pytest-timeout
+pip install pytest pytest-cov pytest-html pytest-json-report pytest-timeout black isort flake8 mypy
 
 # Install optional dependencies for enhanced functionality
 echo "Installing optional dependencies..."
-pip install jax jaxlib numba scikit-learn matplotlib seaborn
+pip install jax jaxlib numba scikit-learn matplotlib seaborn pywavelets myst-parser sphinx sphinx-rtd-theme
 
 echo ""
 echo "Setup completed successfully!"
 echo "============================="
 echo ""
 echo "To activate the environment in the future, run:"
-echo "  source biomedical_hurst_env/bin/activate"
+echo "  source neurological_env/bin/activate"
 echo ""
 echo "To deactivate the environment, run:"
 echo "  deactivate"
 echo ""
 echo "To run tests:"
-echo "  python -m pytest estimator_testing_validation/ -v"
+echo "  python -m pytest tests/ -v"
 echo ""
 echo "To run the demo:"
-echo "  python biomedical_hurst_factory.py"
+echo "  python scripts/biomedical_scenarios_demo.py"
 echo ""
 

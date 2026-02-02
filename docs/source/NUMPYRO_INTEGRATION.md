@@ -1,7 +1,8 @@
-# JAX and NumPyro Integration
-## Bayesian Hurst Estimation
+# NumPyro Integration for Biomedical Hurst Factory
 
-The **Neurological LRD Analysis** library integrates with JAX and NumPyro to provide robust Bayesian estimation of the Hurst exponent. This integration leverages the powerful combination of JAX's automatic differentiation with NumPyro's probabilistic programming capabilities.
+## Overview
+
+The Biomedical Hurst Factory now includes comprehensive NumPyro integration for advanced Bayesian inference and probabilistic modeling of Hurst exponent estimation. This integration leverages the powerful combination of JAX's automatic differentiation with NumPyro's probabilistic programming capabilities.
 
 ## Key Features
 

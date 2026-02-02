@@ -82,9 +82,8 @@ Contents
    :maxdepth: 2
    :caption: Getting Started
 
-   installation
-   quickstart
-   tutorial
+   ENVIRONMENT_SETUP
+   TUTORIAL
    ml_tutorial
 
 .. toctree::
@@ -92,46 +91,24 @@ Contents
    :caption: User Guide
 
    api_reference
-   benchmarking
-   configuration
-   biomedical_scenarios
-   neurological_conditions
+   BENCHMARKING_GUIDE
+   CONFIGURATION_GUIDE
 
 .. toctree::
    :maxdepth: 2
    :caption: Machine Learning
 
    ml_baselines
-   ml_tutorial
    feature_extraction
-   hyperparameter_optimization
-   pretrained_models
-   benchmark_comparison
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Advanced Topics
-
-   bayesian_inference
-   gpu_acceleration
-   custom_estimators
-   performance_optimization
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Development
-
-   contributing
-   changelog
-   api
+   NUMPYRO_INTEGRATION
 
 .. toctree::
    :maxdepth: 2
    :caption: Research
 
-   research_paper
-   benchmarks
-   validation_studies
+   comprehensive-lrd-estimators-paper
+   Techniques for Estimating the Hurst Exponent
+   wavelet-based-lrd-estimators
 
 Indices and tables
 ==================

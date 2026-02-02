@@ -19,11 +19,3 @@ python:
     - requirements: docs/requirements.txt
     - method: pip
       path: .
-
-# Build documentation in the 'latest' and 'stable' versions
-# but not in PR preview versions
-builds:
-  latest:
-    configuration: docs/source/conf.py
-  stable:
-    configuration: docs/source/conf.py

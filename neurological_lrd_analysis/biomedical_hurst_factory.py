@@ -1196,7 +1196,8 @@ class WhittleMLEEstimator(BaseHurstEstimator):
             else:
                 hurst_estimate = 0.5  # Fallback to default
                 convergence_flag = False
-        except:
+        except (ImportError, RuntimeError, ValueError, np.linalg.LinAlgError) as e:
+            logger.debug(f"Whittle MLE optimization failed: {e}")
             hurst_estimate = 0.5  # Fallback to default
             convergence_flag = False
 
@@ -1668,9 +1669,9 @@ class NDWTEstimator(BaseHurstEstimator):
             if len(scales) < 3:
                 raise ValueError("Insufficient NDWT levels for regression")
 
-            # Linear regression in log-log space
-            log_scales = np.log(scales)
-            log_variances = np.log(variances)
+            # Linear regression in log2-log2 space (consistent with DWT/Abry-Veitch)
+            log_scales = np.log2(scales)
+            log_variances = np.log2(variances)
 
             stats, _, _, _ = _lazy_import_scipy()
             slope, intercept, r_value, p_value, std_err = stats.linregress(
@@ -1720,8 +1721,8 @@ class NDWTEstimator(BaseHurstEstimator):
             if len(variances) < 3:
                 raise ValueError("Insufficient scales for NDWT approximation")
 
-            log_scales = np.log(scales[: len(variances)])
-            log_variances = np.log(variances)
+            log_scales = np.log2(scales[: len(variances)])
+            log_variances = np.log2(variances)
 
             stats, _, _, _ = _lazy_import_scipy()
             slope, intercept, r_value, p_value, std_err = stats.linregress(

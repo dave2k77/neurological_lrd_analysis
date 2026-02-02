@@ -1,10 +1,9 @@
-# Neurological LRD Analysis - Documentation
+# Biomedical Hurst Factory
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-passing-green.svg)](https://github.com/your-repo/neurological-lrd-analysis)
+[![Tests](https://img.shields.io/badge/tests-passing-green.svg)](https://github.com/your-repo/biomedical-hurst-factory)
 
-This directory contains the comprehensive documentation for the Neurological LRD Analysis library.
 A comprehensive Python library for estimating Hurst exponents in biomedical time series data with statistical confidence, uncertainty quantification, and performance monitoring.
 
 ## 🚀 Quick Start

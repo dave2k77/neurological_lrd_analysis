@@ -9,16 +9,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.3] - 2026-02-01
+
+### Fixed
+- Fixed NDWT log base inconsistency (changed from `np.log` to `np.log2` for consistency with DWT/Abry-Veitch)
+- Fixed bare `except:` clause in Whittle MLE estimator with specific exception handling and debug logging
+
+### Added
+- lrdbenchmark integration for MRW (Multifractal Random Walk) generation with local fallback
+- Comprehensive L2-based estimator accuracy test suite (`test_estimator_accuracy.py`)
+- Accuracy tests for DFA, R/S, Higuchi, Periodogram, GPH, DWT, NDWT, Abry-Veitch estimators
+- Estimator consistency cross-validation tests
+
+### Changed
+- Tightened test accuracy bounds (from MAE < 2.0 to MAE < 0.20-0.25) for more rigorous validation
+
+## [0.4.2] - 2026-02-01
+
 ### Added
 - Neural network baseline implementations (MLP, CNN, LSTM, GRU, Transformer)
 - Machine learning baseline implementations (Random Forest, SVR, GBT)
 - Advanced wavelet techniques (Wavelet Leaders, Wavelet Whittle)
+- Comprehensive documentation for Machine Learning baselines and pretrained models
+- Detailed feature extraction guide for 74+ neurological features
+- New Sphinx-based documentation infrastructure in `docs/source`
 
 ### Changed
-- Project structure reorganized for GitHub repository
-- Documentation moved to `docs/` folder
-- Scripts moved to `scripts/` folder
-- Tests moved to `tests/` folder
+- Project structure reorganized for GitHub repository (moved docs, scripts, and tests to root folders)
+- Standardized project naming to "Neurological LRD Analysis" throughout all documentation
+- Updated `scripts/setup_venv.sh` with Windows support and modernized dependencies
+- Improved documentation index and tutorial structure for better accessibility
+- Reorganized `docs/` content for consistency between Markdown and reStructuredText versions
+
+### Fixed
+- Fixed `.readthedocs.yml` configuration to ensure successful builds on Read the Docs
+- Corrected broken links and outdated import paths in API and tutorial guides
+- Removed invalid `builds` section from ReadTheDocs configuration
 
 ## [0.4.0] - 2025-10-XX
 

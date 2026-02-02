@@ -287,6 +287,16 @@ def generate_mrw(
     if not (0 < hurst < 1):
         raise ValueError(f"Hurst exponent must be in (0, 1), got {hurst}")
 
+    # Try lrdbenchmark first (optimized implementation)
+    lrd_gen = _lazy_import_lrdbenchmark_generation()
+    if lrd_gen is not None:
+        try:
+            return lrd_gen.generate_mrw(
+                n=n, H=hurst, lambda_param=lambda_param, sigma=sigma
+            )
+        except Exception as e:
+            logger.debug(f"lrdbenchmark MRW failed, falling back to local: {e}")
+
     # Generate log-normal multifractal process
     # MRW: X(t) = ∫_0^t exp(ω(s)) dW(s)
     # where ω(s) is a Gaussian process with long-range correlations
