@@ -224,11 +224,11 @@ Methods
 ~~~~~~~
 
 .. automethod:: neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_features
-.. automethod:: neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_statistical_features
-.. automethod:: neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_spectral_features
-.. automethod:: neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_wavelet_features
-.. automethod:: neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_fractal_features
-.. automethod:: neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_biomedical_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.extract_statistical_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.extract_spectral_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.extract_wavelet_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.extract_fractal_features
+.. autofunction:: neurological_lrd_analysis.ml_baselines.extract_biomedical_features
 
 Examples
 --------

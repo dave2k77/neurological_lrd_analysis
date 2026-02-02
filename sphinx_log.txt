@@ -1,0 +1,207 @@
+[01mRunning Sphinx v8.2.3[39;49;00m
+[01mloading translations [en]... [39;49;00mdone
+[91mWARNING: html_static_path entry '_static' does not exist[39;49;00m
+[91mWARNING: logo file '_static/logo.png' does not exist[39;49;00m
+[91mWARNING: favicon file '_static/favicon.ico' does not exist[39;49;00m
+Converting `source_suffix = ['.rst', '.md']` to `source_suffix = {'.rst': 'restructuredtext', '.md': 'restructuredtext'}`.
+[01mloading pickled environment... [39;49;00mThe configuration has changed (3 options: 'html_permalinks_icon', 'jquery_use_sri', 'mathjax3_config')
+done
+[01mmyst v4.0.1:[39;49;00m MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'smartquotes', 'substitution', 'deflist', 'html_image', 'replacements', 'colon_fence', 'html_admonition', 'linkify', 'dollarmath'}, disable_syntax=[], all_links_external=False, links_external_new_tab=False, url_schemes=('http', 'https', 'mailto', 'ftp'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_sort=True, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+[01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+[01mwriting output... [39;49;00m
+[01mbuilding [html]: [39;49;00mtargets for 0 source files that are out of date
+[01mupdating environment: [39;49;00m0 added, 2 changed, 0 removed
+[2K[01mreading sources... [39;49;00m[ 50%] [35mfeature_extraction[39;49;00m[2K[01mreading sources... [39;49;00m[100%] [35mml_baselines[39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\feature_extraction.py:docstring of neurological_lrd_analysis.ml_baselines.feature_extraction.TimeSeriesFeatureExtractor:1: WARNING: duplicate object description of neurological_lrd_analysis.TimeSeriesFeatureExtractor, other instance in ml_baselines, use :no-index: for one of them[39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\feature_extraction.py:docstring of neurological_lrd_analysis.ml_baselines.feature_extraction.TimeSeriesFeatureExtractor.__init__:1: WARNING: duplicate object description of neurological_lrd_analysis.TimeSeriesFeatureExtractor.__init__, other instance in ml_baselines, use :no-index: for one of them[39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\feature_extraction.py:docstring of neurological_lrd_analysis.ml_baselines.feature_extraction.TimeSeriesFeatureExtractor.extract_features:1: WARNING: duplicate object description of neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_features, other instance in ml_baselines, use :no-index: for one of them[39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\feature_extraction.py:docstring of neurological_lrd_analysis.ml_baselines.feature_extraction.TimeSeriesFeatureExtractor.extract_features:1: WARNING: duplicate object description of neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_features, other instance in feature_extraction, use :no-index: for one of them[39;49;00m
+[91mWARNING: autodoc: failed to import method 'TimeSeriesFeatureExtractor.extract_statistical_features' from module 'neurological_lrd_analysis'; the following exception was raised:
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 461, in safe_getattr
+    return getattr(obj, name, *defargs)
+AttributeError: type object 'TimeSeriesFeatureExtractor' has no attribute 'extract_statistical_features'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\importer.py", line 288, in import_object
+    obj = attrgetter(obj, mangled_name)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 384, in get_attr
+    return autodoc_attrgetter(obj, name, *defargs, registry=self.env._registry)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 3149, in autodoc_attrgetter
+    return safe_getattr(obj, name, *defargs)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 477, in safe_getattr
+    raise AttributeError(name) from exc
+AttributeError: extract_statistical_features
+ [autodoc.import_object][39;49;00m
+[91mWARNING: autodoc: failed to import method 'TimeSeriesFeatureExtractor.extract_spectral_features' from module 'neurological_lrd_analysis'; the following exception was raised:
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 461, in safe_getattr
+    return getattr(obj, name, *defargs)
+AttributeError: type object 'TimeSeriesFeatureExtractor' has no attribute 'extract_spectral_features'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\importer.py", line 288, in import_object
+    obj = attrgetter(obj, mangled_name)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 384, in get_attr
+    return autodoc_attrgetter(obj, name, *defargs, registry=self.env._registry)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 3149, in autodoc_attrgetter
+    return safe_getattr(obj, name, *defargs)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 477, in safe_getattr
+    raise AttributeError(name) from exc
+AttributeError: extract_spectral_features
+ [autodoc.import_object][39;49;00m
+[91mWARNING: autodoc: failed to import method 'TimeSeriesFeatureExtractor.extract_wavelet_features' from module 'neurological_lrd_analysis'; the following exception was raised:
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 461, in safe_getattr
+    return getattr(obj, name, *defargs)
+AttributeError: type object 'TimeSeriesFeatureExtractor' has no attribute 'extract_wavelet_features'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\importer.py", line 288, in import_object
+    obj = attrgetter(obj, mangled_name)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 384, in get_attr
+    return autodoc_attrgetter(obj, name, *defargs, registry=self.env._registry)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 3149, in autodoc_attrgetter
+    return safe_getattr(obj, name, *defargs)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 477, in safe_getattr
+    raise AttributeError(name) from exc
+AttributeError: extract_wavelet_features
+ [autodoc.import_object][39;49;00m
+[91mWARNING: autodoc: failed to import method 'TimeSeriesFeatureExtractor.extract_fractal_features' from module 'neurological_lrd_analysis'; the following exception was raised:
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 461, in safe_getattr
+    return getattr(obj, name, *defargs)
+AttributeError: type object 'TimeSeriesFeatureExtractor' has no attribute 'extract_fractal_features'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\importer.py", line 288, in import_object
+    obj = attrgetter(obj, mangled_name)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 384, in get_attr
+    return autodoc_attrgetter(obj, name, *defargs, registry=self.env._registry)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 3149, in autodoc_attrgetter
+    return safe_getattr(obj, name, *defargs)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 477, in safe_getattr
+    raise AttributeError(name) from exc
+AttributeError: extract_fractal_features
+ [autodoc.import_object][39;49;00m
+[91mWARNING: autodoc: failed to import method 'TimeSeriesFeatureExtractor.extract_biomedical_features' from module 'neurological_lrd_analysis'; the following exception was raised:
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 461, in safe_getattr
+    return getattr(obj, name, *defargs)
+AttributeError: type object 'TimeSeriesFeatureExtractor' has no attribute 'extract_biomedical_features'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\importer.py", line 288, in import_object
+    obj = attrgetter(obj, mangled_name)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 384, in get_attr
+    return autodoc_attrgetter(obj, name, *defargs, registry=self.env._registry)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 3149, in autodoc_attrgetter
+    return safe_getattr(obj, name, *defargs)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 477, in safe_getattr
+    raise AttributeError(name) from exc
+AttributeError: extract_biomedical_features
+ [autodoc.import_object][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\ml_baselines.rst:213: WARNING: Title underline too short.
+
+Fast Inference
+~~~~~~~~~~~~~ [docutils][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\ml_baselines.rst:213: WARNING: Title underline too short.
+
+Fast Inference
+~~~~~~~~~~~~~ [docutils][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\feature_extraction.py:docstring of neurological_lrd_analysis.ml_baselines.feature_extraction.TimeSeriesFeatureExtractor:1: WARNING: duplicate object description of neurological_lrd_analysis.TimeSeriesFeatureExtractor, other instance in feature_extraction, use :no-index: for one of them[39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\feature_extraction.py:docstring of neurological_lrd_analysis.ml_baselines.feature_extraction.TimeSeriesFeatureExtractor.__init__:1: WARNING: duplicate object description of neurological_lrd_analysis.TimeSeriesFeatureExtractor.__init__, other instance in feature_extraction, use :no-index: for one of them[39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\feature_extraction.py:docstring of neurological_lrd_analysis.ml_baselines.feature_extraction.TimeSeriesFeatureExtractor.extract_features:1: WARNING: duplicate object description of neurological_lrd_analysis.TimeSeriesFeatureExtractor.extract_features, other instance in feature_extraction, use :no-index: for one of them[39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\ml_baselines.rst:305: WARNING: Title underline too short.
+
+RandomForestEstimator
+~~~~~~~~~~~~~~~~~~~~ [docutils][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\ml_baselines.rst:305: WARNING: Title underline too short.
+
+RandomForestEstimator
+~~~~~~~~~~~~~~~~~~~~ [docutils][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\ml_estimators.py:docstring of neurological_lrd_analysis.ml_baselines.ml_estimators.RandomForestEstimator.__init__:15: WARNING: Inline strong start-string without end-string. [docutils][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\ml_baselines.rst:313: WARNING: Title underline too short.
+
+SVREstimator
+~~~~~~~~~~~ [docutils][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\ml_baselines.rst:313: WARNING: Title underline too short.
+
+SVREstimator
+~~~~~~~~~~~ [docutils][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\ml_estimators.py:docstring of neurological_lrd_analysis.ml_baselines.ml_estimators.SVREstimator.__init__:13: WARNING: Inline strong start-string without end-string. [docutils][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\neurological_lrd_analysis\ml_baselines\ml_estimators.py:docstring of neurological_lrd_analysis.ml_baselines.ml_estimators.GradientBoostingEstimator.__init__:17: WARNING: Inline strong start-string without end-string. [docutils][39;49;00m
+[91mWARNING: autodoc: failed to import function 'create_pretrained_suite' from module 'neurological_lrd_analysis'; the following exception was raised:
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 461, in safe_getattr
+    return getattr(obj, name, *defargs)
+AttributeError: module 'neurological_lrd_analysis' has no attribute 'create_pretrained_suite'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\importer.py", line 288, in import_object
+    obj = attrgetter(obj, mangled_name)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 384, in get_attr
+    return autodoc_attrgetter(obj, name, *defargs, registry=self.env._registry)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\ext\autodoc\__init__.py", line 3149, in autodoc_attrgetter
+    return safe_getattr(obj, name, *defargs)
+  File "C:\Users\davia\miniconda3\Lib\site-packages\sphinx\util\inspect.py", line 477, in safe_getattr
+    raise AttributeError(name) from exc
+AttributeError: create_pretrained_suite
+ [autodoc.import_object][39;49;00m
+[01mlooking for now-outdated files... [39;49;00mnone found
+[01mpickling environment... [39;49;00mdone
+[01mchecking consistency... [39;49;00m[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\API_REFERENCE.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\API_Reference_Guide.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\Complete_API_Documentation_Biomedical_Time_Series_Analysis.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\DOCUMENTATION_INDEX.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\GPU-Acceleration-Strategy.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\PROJECT_SUMMARY.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\README.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\biomedical-framework-api-documentation.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\biomedical-framework-index.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\biomedical-framework-quick-reference.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\biomedical-generative-model-documentation.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\biomedical-plotting-system-documentation.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\biomedical_data_models_generative_factory_architecture.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\biomedical_time_series_data_analysis_plotting_utility.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\comprehensive-hurst-library.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\design_algorithms_for_generating_synthetic_data.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\installation.rst: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\project_instructions.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\quickstart.rst: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\time-series-algorithms-comprehensive.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\time-series-models-biomedicine-neuroscience.md: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+[91mC:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\source\tutorial.rst: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+done
+[01mpreparing documents... [39;49;00mdone
+[01mcopying assets... [39;49;00m
+[01mcopying static files... [39;49;00m
+Writing evaluated template result to C:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\_build\_static\basic.css
+Writing evaluated template result to C:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\_build\_static\documentation_options.js
+Writing evaluated template result to C:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\_build\_static\language_data.js
+Writing evaluated template result to C:\Users\davia\OneDrive\Desktop\PhD Bioengineering Research\frameworks\neurological_lrd_analysis\docs\_build\_static\js\versions.js
+[01mcopying static files: [39;49;00mdone
+[01mcopying extra files... [39;49;00m
+[01mcopying extra files: [39;49;00mdone
+[01mcopying assets: [39;49;00mdone
+[2K[01mwriting output... [39;49;00m[ 33%] [32mfeature_extraction[39;49;00m[2K[01mwriting output... [39;49;00m[ 67%] [32mindex[39;49;00m[2K[01mwriting output... [39;49;00m[100%] [32mml_baselines[39;49;00m
+[01mgenerating indices... [39;49;00mgenindex py-modindex done
+[2K[01mhighlighting module code... [39;49;00m[  8%] [94mneurological_lrd_analysis.benchmark_backends.selector[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 17%] [94mneurological_lrd_analysis.benchmark_core.biomedical_scenarios[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 25%] [94mneurological_lrd_analysis.benchmark_core.generation[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 33%] [94mneurological_lrd_analysis.benchmark_core.runner[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 42%] [94mneurological_lrd_analysis.benchmark_registry.registry[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 50%] [94mneurological_lrd_analysis.biomedical_hurst_factory[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 58%] [94mneurological_lrd_analysis.ml_baselines.benchmark_comparison[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 67%] [94mneurological_lrd_analysis.ml_baselines.feature_extraction[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 75%] [94mneurological_lrd_analysis.ml_baselines.hyperparameter_optimization[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 83%] [94mneurological_lrd_analysis.ml_baselines.inference[39;49;00m[2K[01mhighlighting module code... [39;49;00m[ 92%] [94mneurological_lrd_analysis.ml_baselines.ml_estimators[39;49;00m[2K[01mhighlighting module code... [39;49;00m[100%] [94mneurological_lrd_analysis.ml_baselines.pretrained_models[39;49;00m
+[01mwriting additional pages... [39;49;00msearch done
+[01mdumping search index in English (code: en)... [39;49;00mdone
+[01mdumping object inventory... [39;49;00mdone
+[01mbuild succeeded, 47 warnings.[39;49;00m
+
+The HTML pages are in docs\_build.
